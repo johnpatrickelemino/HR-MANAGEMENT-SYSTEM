@@ -11,8 +11,6 @@ namespace HR_MANAGEMENT_SYSTEM
 
         public int id{ get; set; }
         public string job{ get; set; }
-        List<string> jobs = new List<string> { "Teacher", "Staff", "Librarian" };
-
 
     }
 }

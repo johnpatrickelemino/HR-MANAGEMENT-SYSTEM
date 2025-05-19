@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
-    public partial class eval : Form
+    public partial class dashboard : Form
     {
-        public eval()
+        public dashboard()
         {
             InitializeComponent();
         }
 
-        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+     
         }
     }
 }

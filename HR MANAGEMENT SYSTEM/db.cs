@@ -39,7 +39,7 @@ namespace research
 
             }
         }
-        public bool applyform(string fullname, string address, string gmail, int age, string occupation, string sex, string jobtitle, Image image, byte[]pdffile)
+        public bool applyform(string fullname, string address, string gmail, int age, string occupation, string sex, string jobtitle, Image image, byte[] pdffile)
         {
             try
             {
@@ -77,6 +77,5 @@ namespace research
 
             }
         }
-
     }
 }

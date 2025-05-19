@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -77,7 +78,7 @@ namespace HR_MANAGEMENT_SYSTEM
                 string selectedPdfPath = File.FileName;
 
                 guna2TextBox2.Text = selectedPdfPath;
-                
+
             }
 
 
@@ -96,36 +97,11 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var job = new List<jobtitle> {
-            new jobtitle() { id = 1, job = "Teacher" },
-            new jobtitle() { id = 2, job = "Staff" },
-            new jobtitle() { id = 3, job = "Librarian" }
-            };
-            guna2ComboBox2.DataSource = job;
-            guna2ComboBox2.DisplayMember = "job";
-            guna2ComboBox2.ValueMember = "id";
-            if (guna2ComboBox2.SelectedItem is jobtitle selectedJob)
-            {
-                switch (selectedJob.job)
-                {
-                    case "Teacher":
-                        loadform(new teacher());
-                        break;
-                    case "Staff":
-                        loadform(new staff());
-                        break;
-                    case "Librarian":
-                        loadform(new librarian());
-                        break;
-                    default:
-                        MessageBox.Show("Unknown job title selected.");
-                        break;
-                }
-            }
+
 
         }
-    
-        
+
+
 
         private void fullnamebtn_TextChanged(object sender, EventArgs e)
         {
@@ -150,7 +126,7 @@ namespace HR_MANAGEMENT_SYSTEM
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-           open.Filter = "jpg.files|*.jpg|png.files|*.png|All files|*.*";
+            open.Filter = "jpg.files|*.jpg|png.files|*.png|All files|*.*";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 guna2PictureBox1.ImageLocation = open.FileName;
@@ -159,7 +135,7 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2PictureBox1_Click_1(object sender, EventArgs e)
         {
-         
+
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
@@ -170,6 +146,51 @@ namespace HR_MANAGEMENT_SYSTEM
         private void jobtitleBindingSource1_CurrentChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.Text = "Select Job Title";
+            if (comboBox1.SelectedItem is jobtitle Job)
+            {
+                if (Job.id == 0)
+                {
+                    mainpanel.Visible = false;
+                    return;
+                }
+                mainpanel.Visible = true;
+                switch (Job.job)
+                    {
+                        case "Professor":
+                            loadform(new Professor());
+                            break;
+                        case "Nurse":
+                            loadform(new nurse());
+                            break;
+                        case "Librarian":
+                            loadform(new librarian());
+                            break;
+                        default:
+                            MessageBox.Show("Unknown job title selected.");
+                            break;
+                    }
+             }
+        }
+
+        private void applicantform_Load(object sender, EventArgs e)
+        {
+            var job = new List<jobtitle> {
+        new jobtitle() { id = 1, job = "Professor" },
+        new jobtitle() { id = 2, job = "Nurse" },
+        new jobtitle() { id = 3, job = "Librarian" }
+    };
+
+            comboBox1.DataSource = job;
+            comboBox1.DisplayMember = "job";
+            comboBox1.ValueMember = "id";
+            comboBox1.SelectedIndex = 0;
+
+            mainpanel.Visible = false;
         }
     }
 }

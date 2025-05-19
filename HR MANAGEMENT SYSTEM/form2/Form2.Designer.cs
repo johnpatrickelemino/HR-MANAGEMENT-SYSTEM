@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -51,23 +51,18 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             jobtitleBindingSource = new BindingSource(components);
             guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(components);
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            comboBox2 = new ComboBox();
+            comboBox1 = new ComboBox();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             mainpanel = new Guna.UI2.WinForms.Guna2Panel();
             applybtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
@@ -98,10 +93,9 @@
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.BackColor = Color.Transparent;
+            guna2GradientPanel1.Controls.Add(comboBox2);
+            guna2GradientPanel1.Controls.Add(comboBox1);
             guna2GradientPanel1.Controls.Add(guna2TextBox2);
-            guna2GradientPanel1.Controls.Add(guna2HtmlLabel1);
-            guna2GradientPanel1.Controls.Add(guna2ComboBox1);
-            guna2GradientPanel1.Controls.Add(guna2ComboBox2);
             guna2GradientPanel1.Controls.Add(mainpanel);
             guna2GradientPanel1.Controls.Add(applybtn);
             guna2GradientPanel1.Controls.Add(guna2Button3);
@@ -112,15 +106,36 @@
             guna2GradientPanel1.Controls.Add(addressbtn);
             guna2GradientPanel1.Controls.Add(fullnamebtn);
             guna2GradientPanel1.Controls.Add(label3);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges25;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges21;
             guna2GradientPanel1.FillColor = Color.Yellow;
             guna2GradientPanel1.FillColor2 = Color.DarkGreen;
-            guna2GradientPanel1.Location = new Point(0, 33);
+            guna2GradientPanel1.Location = new Point(0, 40);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2GradientPanel1.Size = new Size(803, 442);
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2GradientPanel1.Size = new Size(803, 435);
             guna2GradientPanel1.TabIndex = 0;
             guna2GradientPanel1.Paint += guna2GradientPanel1_Paint;
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Male", "Female" });
+            comboBox2.Location = new Point(41, 311);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(177, 23);
+            comboBox2.TabIndex = 25;
+            comboBox2.Text = "Sex";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Professor", "Nurse", "Librarian" });
+            comboBox1.Location = new Point(41, 282);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(177, 23);
+            comboBox1.TabIndex = 24;
+            comboBox1.Text = "jobtitle";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // guna2TextBox2
             // 
@@ -141,64 +156,12 @@
             guna2TextBox2.Size = new Size(210, 22);
             guna2TextBox2.TabIndex = 22;
             // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.WhiteSmoke;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(82, 286);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(94, 32);
-            guna2HtmlLabel1.TabIndex = 20;
-            guna2HtmlLabel1.Text = "JOBTITLE";
-            guna2HtmlLabel1.TextAlignment = ContentAlignment.MiddleCenter;
-            guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
-            // 
-            // guna2ComboBox1
-            // 
-            guna2ComboBox1.BackColor = Color.Transparent;
-            guna2ComboBox1.BorderRadius = 20;
-            guna2ComboBox1.CustomizableEdges = customizableEdges3;
-            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.Font = new Font("Segoe UI", 10F);
-            guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
-            guna2ComboBox1.ItemHeight = 30;
-            guna2ComboBox1.Location = new Point(41, 324);
-            guna2ComboBox1.Name = "guna2ComboBox1";
-            guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ComboBox1.Size = new Size(120, 36);
-            guna2ComboBox1.TabIndex = 19;
-            guna2ComboBox1.TextAlign = HorizontalAlignment.Center;
-            // 
-            // guna2ComboBox2
-            // 
-            guna2ComboBox2.BackColor = Color.Transparent;
-            guna2ComboBox2.BorderRadius = 20;
-            guna2ComboBox2.CustomizableEdges = customizableEdges5;
-            guna2ComboBox2.DrawMode = DrawMode.OwnerDrawFixed;
-            guna2ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            guna2ComboBox2.FocusedColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox2.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox2.Font = new Font("Segoe UI", 10F);
-            guna2ComboBox2.ForeColor = Color.FromArgb(68, 88, 112);
-            guna2ComboBox2.ItemHeight = 30;
-            guna2ComboBox2.Items.AddRange(new object[] { "teacher", "staff", "librarian" });
-            guna2ComboBox2.Location = new Point(41, 282);
-            guna2ComboBox2.Name = "guna2ComboBox2";
-            guna2ComboBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ComboBox2.Size = new Size(181, 36);
-            guna2ComboBox2.TabIndex = 18;
-            guna2ComboBox2.TextAlign = HorizontalAlignment.Center;
-            guna2ComboBox2.SelectedIndexChanged += guna2ComboBox2_SelectedIndexChanged;
-            // 
             // mainpanel
             // 
-            mainpanel.CustomizableEdges = customizableEdges7;
+            mainpanel.CustomizableEdges = customizableEdges3;
             mainpanel.Location = new Point(471, 3);
             mainpanel.Name = "mainpanel";
-            mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges4;
             mainpanel.Size = new Size(329, 435);
             mainpanel.TabIndex = 17;
             mainpanel.Paint += mainpanel_Paint;
@@ -206,7 +169,7 @@
             // applybtn
             // 
             applybtn.BorderRadius = 20;
-            applybtn.CustomizableEdges = customizableEdges9;
+            applybtn.CustomizableEdges = customizableEdges5;
             applybtn.DisabledState.BorderColor = Color.DarkGray;
             applybtn.DisabledState.CustomBorderColor = Color.DarkGray;
             applybtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -216,7 +179,7 @@
             applybtn.ForeColor = Color.Black;
             applybtn.Location = new Point(254, 349);
             applybtn.Name = "applybtn";
-            applybtn.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            applybtn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             applybtn.Size = new Size(180, 45);
             applybtn.TabIndex = 16;
             applybtn.Text = "APPLY";
@@ -224,7 +187,7 @@
             // guna2Button3
             // 
             guna2Button3.BorderRadius = 10;
-            guna2Button3.CustomizableEdges = customizableEdges11;
+            guna2Button3.CustomizableEdges = customizableEdges7;
             guna2Button3.DisabledState.BorderColor = Color.DarkGray;
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -234,7 +197,7 @@
             guna2Button3.ForeColor = Color.Black;
             guna2Button3.Location = new Point(244, 310);
             guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button3.Size = new Size(210, 33);
             guna2Button3.TabIndex = 15;
             guna2Button3.Text = "upload resume";
@@ -243,11 +206,11 @@
             // guna2PictureBox1
             // 
             guna2PictureBox1.BorderRadius = 20;
-            guna2PictureBox1.CustomizableEdges = customizableEdges13;
+            guna2PictureBox1.CustomizableEdges = customizableEdges9;
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(254, 96);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2PictureBox1.Size = new Size(170, 141);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox1.TabIndex = 13;
@@ -257,7 +220,7 @@
             // guna2Button1
             // 
             guna2Button1.BorderRadius = 10;
-            guna2Button1.CustomizableEdges = customizableEdges15;
+            guna2Button1.CustomizableEdges = customizableEdges11;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -267,7 +230,7 @@
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.Location = new Point(287, 243);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Button1.Size = new Size(106, 33);
             guna2Button1.TabIndex = 12;
             guna2Button1.Text = "Upload Photo";
@@ -276,7 +239,7 @@
             // gmail
             // 
             gmail.BorderRadius = 10;
-            gmail.CustomizableEdges = customizableEdges17;
+            gmail.CustomizableEdges = customizableEdges13;
             gmail.DefaultText = "";
             gmail.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             gmail.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -290,7 +253,7 @@
             gmail.PlaceholderForeColor = Color.Black;
             gmail.PlaceholderText = "enter applicant's gmail";
             gmail.SelectedText = "";
-            gmail.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            gmail.ShadowDecoration.CustomizableEdges = customizableEdges14;
             gmail.Size = new Size(187, 37);
             gmail.TabIndex = 11;
             gmail.TextChanged += gmail_TextChanged;
@@ -298,7 +261,7 @@
             // agebtn
             // 
             agebtn.BorderRadius = 10;
-            agebtn.CustomizableEdges = customizableEdges19;
+            agebtn.CustomizableEdges = customizableEdges15;
             agebtn.DefaultText = "";
             agebtn.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             agebtn.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -312,14 +275,14 @@
             agebtn.PlaceholderForeColor = Color.Black;
             agebtn.PlaceholderText = "enter applicant's age";
             agebtn.SelectedText = "";
-            agebtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            agebtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
             agebtn.Size = new Size(187, 39);
             agebtn.TabIndex = 8;
             // 
             // addressbtn
             // 
             addressbtn.BorderRadius = 10;
-            addressbtn.CustomizableEdges = customizableEdges21;
+            addressbtn.CustomizableEdges = customizableEdges17;
             addressbtn.DefaultText = "";
             addressbtn.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             addressbtn.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -333,14 +296,14 @@
             addressbtn.PlaceholderForeColor = Color.Black;
             addressbtn.PlaceholderText = "enter applicant's address";
             addressbtn.SelectedText = "";
-            addressbtn.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            addressbtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
             addressbtn.Size = new Size(187, 41);
             addressbtn.TabIndex = 7;
             // 
             // fullnamebtn
             // 
             fullnamebtn.BorderRadius = 10;
-            fullnamebtn.CustomizableEdges = customizableEdges23;
+            fullnamebtn.CustomizableEdges = customizableEdges19;
             fullnamebtn.DefaultText = "";
             fullnamebtn.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             fullnamebtn.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -354,7 +317,7 @@
             fullnamebtn.PlaceholderForeColor = Color.Black;
             fullnamebtn.PlaceholderText = "enter applicant's fullname";
             fullnamebtn.SelectedText = "";
-            fullnamebtn.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            fullnamebtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
             fullnamebtn.Size = new Size(187, 40);
             fullnamebtn.TabIndex = 6;
             fullnamebtn.TextChanged += fullnamebtn_TextChanged;
@@ -379,10 +342,10 @@
             // 
             guna2Panel1.Controls.Add(guna2ControlBox2);
             guna2Panel1.Controls.Add(guna2ControlBox1);
-            guna2Panel1.CustomizableEdges = customizableEdges31;
+            guna2Panel1.CustomizableEdges = customizableEdges27;
             guna2Panel1.Location = new Point(0, -6);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges28;
             guna2Panel1.Size = new Size(803, 40);
             guna2Panel1.TabIndex = 1;
             // 
@@ -390,24 +353,24 @@
             // 
             guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            guna2ControlBox2.CustomizableEdges = customizableEdges27;
+            guna2ControlBox2.CustomizableEdges = customizableEdges23;
             guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox2.IconColor = Color.White;
             guna2ControlBox2.Location = new Point(695, 11);
             guna2ControlBox2.Name = "guna2ControlBox2";
-            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2ControlBox2.Size = new Size(45, 29);
             guna2ControlBox2.TabIndex = 1;
             // 
             // guna2ControlBox1
             // 
             guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            guna2ControlBox1.CustomizableEdges = customizableEdges29;
+            guna2ControlBox1.CustomizableEdges = customizableEdges25;
             guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox1.IconColor = Color.White;
             guna2ControlBox1.Location = new Point(746, 11);
             guna2ControlBox1.Name = "guna2ControlBox1";
-            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2ControlBox1.Size = new Size(45, 29);
             guna2ControlBox1.TabIndex = 0;
             guna2ControlBox1.Click += guna2ControlBox1_Click;
@@ -427,6 +390,7 @@
             Controls.Add(guna2GradientPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "applicantform";
+            Load += applicantform_Load;
             ((System.ComponentModel.ISupportInitialize)jobtitleBindingSource).EndInit();
             guna2GradientPanel1.ResumeLayout(false);
             guna2GradientPanel1.PerformLayout();
@@ -452,13 +416,12 @@
         private BindingSource jobtitleBindingSource1;
         private Guna.UI2.WinForms.Guna2Button applybtn;
         private Guna.UI2.WinForms.Guna2Panel mainpanel;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private FileSystemWatcher fileSystemWatcher1;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private ComboBox comboBox2;
+        private ComboBox comboBox1;
     }
 }

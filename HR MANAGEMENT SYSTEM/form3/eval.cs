@@ -10,19 +10,24 @@ using System.Windows.Forms;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
-    public partial class librarian : Form
+    public partial class eval : Form
     {
-        public librarian()
+        public eval()
         {
             InitializeComponent();
         }
 
-        private void librarian_Load(object sender, EventArgs e)
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void guna2GradientPanel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

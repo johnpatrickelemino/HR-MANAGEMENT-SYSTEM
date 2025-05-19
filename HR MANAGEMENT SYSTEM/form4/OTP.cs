@@ -18,7 +18,7 @@ namespace HR_MANAGEMENT_SYSTEM
 
             for (int i = 0; i < length; i++)
             {
-                otp += random.Next(0, 10); // generates a digit between 0 and 9
+                otp += random.Next(0, 10);
             }
 
             return otp;

@@ -13,6 +13,6 @@ namespace HR_MANAGEMENT_SYSTEM
             ApplicationConfiguration.Initialize();
             Application.Run(new Form3());
         }
-    }// rinig kana nagssalita na
+    }
 
 }

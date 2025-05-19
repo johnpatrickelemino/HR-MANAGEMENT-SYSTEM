@@ -97,7 +97,7 @@
             flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel2.Location = new Point(3, 47);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(169, 50);
+            flowLayoutPanel2.Size = new Size(173, 50);
             flowLayoutPanel2.TabIndex = 6;
             flowLayoutPanel2.Paint += flowLayoutPanel2_Paint;
             // 
@@ -234,7 +234,7 @@
             guna2CustomGradientPanel1.Location = new Point(0, 0);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2CustomGradientPanel1.Size = new Size(873, 556);
+            guna2CustomGradientPanel1.Size = new Size(804, 546);
             guna2CustomGradientPanel1.TabIndex = 0;
             guna2CustomGradientPanel1.Paint += guna2CustomGradientPanel1_Paint;
             // 
@@ -245,7 +245,7 @@
             mainpanel.Location = new Point(182, 55);
             mainpanel.Name = "mainpanel";
             mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            mainpanel.Size = new Size(702, 502);
+            mainpanel.Size = new Size(619, 498);
             mainpanel.TabIndex = 2;
             mainpanel.Paint += guna2GradientPanel1_Paint;
             // 
@@ -266,7 +266,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(873, 556);
+            ClientSize = new Size(804, 546);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(guna2CustomGradientPanel1);
             Name = "Form3";
