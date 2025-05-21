@@ -8,23 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HR_MANAGEMENT_SYSTEM
+namespace HR_MANAGEMENT_SYSTEM.form3
 {
-    public partial class dashboard : Form
+    public partial class kim : Form
     {
-        public dashboard()
+        public kim()
         {
             InitializeComponent();
         }
 
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
+        private void kim_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void guna2DateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-     
         }
     }
 }

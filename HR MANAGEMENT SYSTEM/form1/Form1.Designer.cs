@@ -72,7 +72,7 @@
             guna2ControlBox1.CustomizableEdges = customizableEdges13;
             guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(668, 0);
+            guna2ControlBox1.Location = new Point(680, 0);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2ControlBox1.Size = new Size(45, 29);
@@ -86,11 +86,12 @@
             guna2ControlBox2.CustomizableEdges = customizableEdges11;
             guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(617, 0);
+            guna2ControlBox2.Location = new Point(638, 0);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2ControlBox2.Size = new Size(45, 29);
             guna2ControlBox2.TabIndex = 7;
+            guna2ControlBox2.Click += guna2ControlBox2_Click;
             // 
             // label3
             // 
@@ -132,7 +133,6 @@
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.BackColor = Color.Transparent;
-            guna2GradientPanel1.BorderRadius = 30;
             guna2GradientPanel1.Controls.Add(applicantbuton);
             guna2GradientPanel1.Controls.Add(guna2Button1);
             guna2GradientPanel1.Controls.Add(label3);
@@ -143,8 +143,8 @@
             guna2GradientPanel1.Controls.Add(guna2ControlBox1);
             guna2GradientPanel1.CustomizableEdges = customizableEdges15;
             guna2GradientPanel1.Dock = DockStyle.Fill;
-            guna2GradientPanel1.FillColor = Color.Yellow;
-            guna2GradientPanel1.FillColor2 = Color.FromArgb(0, 192, 0);
+            guna2GradientPanel1.FillColor = Color.Green;
+            guna2GradientPanel1.FillColor2 = Color.Green;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -205,6 +205,7 @@
             login.Size = new Size(117, 27);
             login.TabIndex = 10;
             login.Text = "login";
+            login.Click += login_Click;
             // 
             // passwordBox
             // 

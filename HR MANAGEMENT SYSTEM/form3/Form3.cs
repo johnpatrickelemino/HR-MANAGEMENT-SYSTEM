@@ -91,7 +91,7 @@ namespace HR_MANAGEMENT_SYSTEM
                 }
             }
 
-        
+
         }
         bool sidebarExpand = true;
         private void sidebartransit_Tick(object sender, EventArgs e)
@@ -153,12 +153,17 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            loadform(new dashboard());
+
         }
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
 }

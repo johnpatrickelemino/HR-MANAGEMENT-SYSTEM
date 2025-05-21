@@ -36,11 +36,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             label1 = new Label();
+            guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -131,13 +137,43 @@
             label1.TabIndex = 0;
             label1.Text = "RESET PASWORD";
             // 
+            // guna2ControlBox2
+            // 
+            guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            guna2ControlBox2.CustomizableEdges = customizableEdges9;
+            guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox2.IconColor = Color.White;
+            guna2ControlBox2.Location = new Point(593, -2);
+            guna2ControlBox2.Name = "guna2ControlBox2";
+            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2ControlBox2.Size = new Size(45, 29);
+            guna2ControlBox2.TabIndex = 9;
+            guna2ControlBox2.Click += guna2ControlBox2_Click;
+            // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges11;
+            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(633, -2);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2ControlBox1.Size = new Size(45, 29);
+            guna2ControlBox1.TabIndex = 8;
+            guna2ControlBox1.Click += guna2ControlBox1_Click;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Green;
             ClientSize = new Size(678, 450);
+            Controls.Add(guna2ControlBox2);
             Controls.Add(guna2Panel1);
+            Controls.Add(guna2ControlBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form5";
             Text = "RESET PASSWORD FORM";
             guna2Panel1.ResumeLayout(false);
@@ -152,5 +188,7 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }

@@ -16,6 +16,17 @@ namespace HR_MANAGEMENT_SYSTEM
         {
             InitializeComponent();
         }
+        public void loadform(object Form)
+        {
+            if (this.showPanel.Controls.Count > 0)
+                this.showPanel.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.showPanel.Controls.Add(f);
+            this.showPanel.Tag = f;
+            f.Show();
+        }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -28,6 +39,11 @@ namespace HR_MANAGEMENT_SYSTEM
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadform(new applicantform());
+        }
+
+        private void guna2GradientPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

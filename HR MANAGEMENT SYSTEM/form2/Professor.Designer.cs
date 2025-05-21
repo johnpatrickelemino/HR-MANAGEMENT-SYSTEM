@@ -85,6 +85,7 @@
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2GradientPanel1.Size = new Size(329, 435);
             guna2GradientPanel1.TabIndex = 0;
+            guna2GradientPanel1.Paint += guna2GradientPanel1_Paint;
             // 
             // guna2Button5
             // 
@@ -271,14 +272,14 @@
             guna2HtmlLabel1.TabIndex = 4;
             guna2HtmlLabel1.Text = "FILL UP THE REQUIREMENTS";
             // 
-            // teacher
+            // Professor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(329, 435);
             Controls.Add(guna2GradientPanel1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "teacher";
+            Name = "Professor";
             Text = "teacher";
             guna2GradientPanel1.ResumeLayout(false);
             guna2GradientPanel1.PerformLayout();

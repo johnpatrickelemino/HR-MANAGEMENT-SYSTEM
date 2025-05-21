@@ -28,28 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            comboBox1 = new ComboBox();
+            showPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            comboBox1 = new ComboBox();
             guna2GradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // guna2GradientPanel1
             // 
+            guna2GradientPanel1.Controls.Add(showPanel);
             guna2GradientPanel1.Controls.Add(guna2HtmlLabel1);
             guna2GradientPanel1.Controls.Add(comboBox1);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges1;
+            guna2GradientPanel1.CustomizableEdges = customizableEdges3;
             guna2GradientPanel1.Dock = DockStyle.Fill;
-            guna2GradientPanel1.FillColor = Color.Lime;
-            guna2GradientPanel1.FillColor2 = Color.Yellow;
+            guna2GradientPanel1.FillColor = Color.Green;
+            guna2GradientPanel1.FillColor2 = Color.Green;
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.BackwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2GradientPanel1.Size = new Size(600, 450);
             guna2GradientPanel1.TabIndex = 0;
+            // 
+            // showPanel
+            // 
+            showPanel.CustomizableEdges = customizableEdges1;
+            showPanel.Location = new Point(43, 118);
+            showPanel.Name = "showPanel";
+            showPanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            showPanel.Size = new Size(500, 320);
+            showPanel.TabIndex = 4;
+            showPanel.Paint += guna2GradientPanel2_Paint;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.BackgroundImageLayout = ImageLayout.None;
+            guna2HtmlLabel1.BorderStyle = BorderStyle.FixedSingle;
+            guna2HtmlLabel1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Location = new Point(177, 12);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(239, 54);
+            guna2HtmlLabel1.TabIndex = 3;
+            guna2HtmlLabel1.Text = "EVALUATION";
             // 
             // comboBox1
             // 
@@ -60,17 +86,6 @@
             comboBox1.TabIndex = 2;
             comboBox1.Text = "                                                 ------------Select applicant------------";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.LightGreen;
-            guna2HtmlLabel1.BorderStyle = BorderStyle.FixedSingle;
-            guna2HtmlLabel1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(177, 12);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(239, 54);
-            guna2HtmlLabel1.TabIndex = 3;
-            guna2HtmlLabel1.Text = "EVALUATION";
             // 
             // eval
             // 
@@ -91,5 +106,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private ComboBox comboBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel showPanel;
     }
 }

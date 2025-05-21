@@ -20,42 +20,6 @@ namespace HR_MANAGEMENT_SYSTEM
         {
 
         }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-            if (!islogin)
-            {
-
-                Connection conn = new Connection();
-                string username = usernameBox.Text;
-                string password = passwordBox.Text;
-                if (conn.loginform(username, password))
-                {
-                    MessageBox.Show("login success");
-                    islogin = true;
-                    Form3 form3 = new Form3();
-                    form3.Show();
-                    this.Hide();
-                    if (form3.IsDisposed)
-                    {
-                        Form1 form1 = new Form1();
-                        this.Close();
-                    }
-
-                }
-                else
-                {
-                    MessageBox.Show("login failed");
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("You are already logged in");
-            }
-        }
-
-
         private void applicantform_Paint(object sender, PaintEventArgs e)
         {
 
@@ -125,6 +89,45 @@ namespace HR_MANAGEMENT_SYSTEM
             this.Hide();
             applicantform form = new applicantform();
             form.Show();
+        }
+
+        private void login_Click(object sender, EventArgs e)
+        {
+            if (!islogin)
+            {
+
+                Connection conn = new Connection();
+                string username = usernameBox.Text;
+                string password = passwordBox.Text;
+                if (conn.loginform(username, password))
+                {
+                    MessageBox.Show("login success");
+                    islogin = true;
+                    Form3 form3 = new Form3();
+                    form3.Show();
+                    this.Hide();
+                    if (form3.IsDisposed)
+                    {
+                        Form1 form1 = new Form1();
+                        this.Close();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("login failed");
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("You are already logged in");
+            }
+        }
+
+        private void guna2ControlBox2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
 }

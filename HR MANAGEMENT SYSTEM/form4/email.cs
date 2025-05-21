@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
-    class Email //rinig ko yung music mo  ayy wait HAHAHA hahahhaa tearstrap boi
+    class Email
 
     {
         public void SendEmail(string email, string OTP)

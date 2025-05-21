@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,11 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
     public partial class applicantform : Form
     {
+        private string connectionString;
+
         public applicantform()
         {
             InitializeComponent();
@@ -115,7 +119,7 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void guna2HtmlLabel1_Click(object sender, EventArgs e)
@@ -160,21 +164,21 @@ namespace HR_MANAGEMENT_SYSTEM
                 }
                 mainpanel.Visible = true;
                 switch (Job.job)
-                    {
-                        case "Professor":
-                            loadform(new Professor());
-                            break;
-                        case "Nurse":
-                            loadform(new nurse());
-                            break;
-                        case "Librarian":
-                            loadform(new librarian());
-                            break;
-                        default:
-                            MessageBox.Show("Unknown job title selected.");
-                            break;
-                    }
-             }
+                {
+                    case "Professor":
+                        loadform(new Professor());
+                        break;
+                    case "Nurse":
+                        loadform(new nurse());
+                        break;
+                    case "Librarian":
+                        loadform(new librarian());
+                        break;
+                    default:
+                        MessageBox.Show("Unknown job title selected.");
+                        break;
+                }
+            }
         }
 
         private void applicantform_Load(object sender, EventArgs e)
@@ -191,6 +195,59 @@ namespace HR_MANAGEMENT_SYSTEM
             comboBox1.SelectedIndex = 0;
 
             mainpanel.Visible = false;
+        }
+
+        private void applybtn_Click(object sender, EventArgs e)
+        {
+            string fullname = fullnamebtn.Text;
+            string address = addressbtn.Text;
+            string gmail = gmailbtn.Text;
+            int age = int.Parse(agebtn.Text);
+            string sex = comboBox2.Text;
+            string jobtitle = comboBox1.Text;
+            byte[] imageBytes;
+            using (MemoryStream ms = new MemoryStream())
+            {
+                guna2PictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                imageBytes = ms.ToArray();
+            }
+            byte[] pdfFile = File.ReadAllBytes("path_to_pdf_file.pdf");
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = @"INSERT INTO applicants 
+                            (fullname, address, gmail, age, sex, jobtitle, image, file) VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
+
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@fullname", fullname);
+                        cmd.Parameters.AddWithValue("@address", address);
+                        cmd.Parameters.AddWithValue("@gmail", gmail);
+                        cmd.Parameters.AddWithValue("@age", age);
+                        cmd.Parameters.AddWithValue("@sex", sex);
+                        cmd.Parameters.AddWithValue("@jobtitle", jobtitle);
+                        cmd.Parameters.AddWithValue("@image", imageBytes);
+                        cmd.Parameters.AddWithValue("@file", pdfFile);
+
+                        int result = cmd.ExecuteNonQuery();
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Application saved successfully!");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to save application.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

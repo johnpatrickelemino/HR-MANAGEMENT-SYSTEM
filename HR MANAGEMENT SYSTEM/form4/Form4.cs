@@ -35,8 +35,8 @@ namespace HR_MANAGEMENT_SYSTEM
             string email = emailt.Text;
             string userOTP = guna2TextBox2.Text;
             string otp = otpStorage.ContainsKey(email) ? otpStorage[email].otp : null;
-           
-            if(HR_MANAGEMENT_SYSTEM.OTP.VerifyOtp(email, userOTP))
+
+            if (HR_MANAGEMENT_SYSTEM.OTP.VerifyOtp(email, userOTP))
             {
                 MessageBox.Show("OTP verified successfully.");
                 this.Hide();
@@ -48,15 +48,15 @@ namespace HR_MANAGEMENT_SYSTEM
                 MessageBox.Show("Invalid OTP. Please try again.");
             }
 
-           
+
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
-          
 
 
-           
+
+
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -77,6 +77,11 @@ namespace HR_MANAGEMENT_SYSTEM
         private void guna2TextBox1_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Are you sure you want to exit?", "Exit Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
 

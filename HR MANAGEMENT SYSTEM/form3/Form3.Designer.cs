@@ -32,12 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button1 = new Button();
             flowLayoutPanel2 = new FlowLayoutPanel();
             menubtn = new Button();
             viewabtn = new Button();
@@ -51,6 +54,8 @@
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             mainpanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             label1 = new Label();
+            guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
@@ -60,7 +65,6 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.Green;
-            flowLayoutPanel1.Controls.Add(button1);
             flowLayoutPanel1.Controls.Add(flowLayoutPanel2);
             flowLayoutPanel1.Controls.Add(aboutbtn);
             flowLayoutPanel1.Controls.Add(logoutbtn);
@@ -72,30 +76,15 @@
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.Paint += flowLayoutPanel1_Paint;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.Transparent;
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(173, 38);
-            button1.TabIndex = 7;
-            button1.Text = "DASHBOARD";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // flowLayoutPanel2
             // 
+            flowLayoutPanel2.BackgroundImageLayout = ImageLayout.None;
             flowLayoutPanel2.Controls.Add(menubtn);
             flowLayoutPanel2.Controls.Add(viewabtn);
             flowLayoutPanel2.Controls.Add(schedbtn);
             flowLayoutPanel2.Controls.Add(button4);
             flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel2.Location = new Point(3, 47);
+            flowLayoutPanel2.Location = new Point(3, 3);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(173, 50);
             flowLayoutPanel2.TabIndex = 6;
@@ -168,7 +157,7 @@
             aboutbtn.ForeColor = Color.White;
             aboutbtn.Image = (Image)resources.GetObject("aboutbtn.Image");
             aboutbtn.ImageAlign = ContentAlignment.MiddleLeft;
-            aboutbtn.Location = new Point(3, 103);
+            aboutbtn.Location = new Point(3, 59);
             aboutbtn.Name = "aboutbtn";
             aboutbtn.Size = new Size(173, 41);
             aboutbtn.TabIndex = 6;
@@ -184,7 +173,7 @@
             logoutbtn.ForeColor = Color.White;
             logoutbtn.Image = (Image)resources.GetObject("logoutbtn.Image");
             logoutbtn.ImageAlign = ContentAlignment.MiddleLeft;
-            logoutbtn.Location = new Point(3, 150);
+            logoutbtn.Location = new Point(3, 106);
             logoutbtn.Name = "logoutbtn";
             logoutbtn.Size = new Size(173, 38);
             logoutbtn.TabIndex = 6;
@@ -221,10 +210,12 @@
             // guna2CustomGradientPanel1
             // 
             guna2CustomGradientPanel1.BackColor = SystemColors.ActiveCaptionText;
+            guna2CustomGradientPanel1.Controls.Add(guna2ControlBox2);
             guna2CustomGradientPanel1.Controls.Add(mainpanel);
+            guna2CustomGradientPanel1.Controls.Add(guna2ControlBox1);
             guna2CustomGradientPanel1.Controls.Add(label1);
             guna2CustomGradientPanel1.Controls.Add(guna2PictureBox1);
-            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges5;
+            guna2CustomGradientPanel1.CustomizableEdges = customizableEdges9;
             guna2CustomGradientPanel1.Dock = DockStyle.Fill;
             guna2CustomGradientPanel1.FillColor = Color.FromArgb(0, 192, 0);
             guna2CustomGradientPanel1.FillColor2 = Color.Yellow;
@@ -233,7 +224,7 @@
             guna2CustomGradientPanel1.ForeColor = SystemColors.ButtonHighlight;
             guna2CustomGradientPanel1.Location = new Point(0, 0);
             guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2CustomGradientPanel1.Size = new Size(804, 546);
             guna2CustomGradientPanel1.TabIndex = 0;
             guna2CustomGradientPanel1.Paint += guna2CustomGradientPanel1_Paint;
@@ -241,10 +232,10 @@
             // mainpanel
             // 
             mainpanel.BackColor = Color.Transparent;
-            mainpanel.CustomizableEdges = customizableEdges3;
+            mainpanel.CustomizableEdges = customizableEdges5;
             mainpanel.Location = new Point(182, 55);
             mainpanel.Name = "mainpanel";
-            mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
             mainpanel.Size = new Size(619, 498);
             mainpanel.TabIndex = 2;
             mainpanel.Paint += guna2GradientPanel1_Paint;
@@ -261,6 +252,32 @@
             label1.Text = "HR MANAGEMENT SYSTEM";
             label1.Click += label1_Click;
             // 
+            // guna2ControlBox2
+            // 
+            guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            guna2ControlBox2.CustomizableEdges = customizableEdges3;
+            guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox2.IconColor = Color.White;
+            guna2ControlBox2.Location = new Point(718, 0);
+            guna2ControlBox2.Name = "guna2ControlBox2";
+            guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2ControlBox2.Size = new Size(45, 29);
+            guna2ControlBox2.TabIndex = 9;
+            // 
+            // guna2ControlBox1
+            // 
+            guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            guna2ControlBox1.CustomizableEdges = customizableEdges7;
+            guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
+            guna2ControlBox1.IconColor = Color.White;
+            guna2ControlBox1.Location = new Point(759, 0);
+            guna2ControlBox1.Name = "guna2ControlBox1";
+            guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2ControlBox1.Size = new Size(45, 29);
+            guna2ControlBox1.TabIndex = 8;
+            guna2ControlBox1.Click += guna2ControlBox1_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -269,6 +286,7 @@
             ClientSize = new Size(804, 546);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(guna2CustomGradientPanel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form3";
             Text = "DASHBOARD";
             Load += Form3_Load;
@@ -294,7 +312,8 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Label label1;
-        private Button button1;
         private Guna.UI2.WinForms.Guna2GradientPanel mainpanel;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
     }
 }

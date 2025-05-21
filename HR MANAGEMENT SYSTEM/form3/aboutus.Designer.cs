@@ -28,43 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(aboutus));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            panel1 = new Panel();
+            comboBox1 = new ComboBox();
             guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             SuspendLayout();
             // 
             // guna2GradientPanel1
             // 
-            guna2GradientPanel1.Controls.Add(guna2PictureBox1);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges3;
+            guna2GradientPanel1.Controls.Add(panel1);
+            guna2GradientPanel1.Controls.Add(comboBox1);
+            guna2GradientPanel1.CustomizableEdges = customizableEdges1;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.Yellow;
-            guna2GradientPanel1.FillColor2 = Color.FromArgb(192, 255, 192);
+            guna2GradientPanel1.FillColor2 = Color.Yellow;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2GradientPanel1.Size = new Size(600, 450);
             guna2GradientPanel1.TabIndex = 0;
             // 
-            // guna2PictureBox1
+            // panel1
             // 
-            guna2PictureBox1.CustomizableEdges = customizableEdges1;
-            guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
-            guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(133, 101);
-            guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2PictureBox1.Size = new Size(327, 205);
-            guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            guna2PictureBox1.TabIndex = 0;
-            guna2PictureBox1.TabStop = false;
-            guna2PictureBox1.Click += guna2PictureBox1_Click;
+            panel1.BackColor = Color.Transparent;
+            panel1.Location = new Point(12, 79);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(576, 359);
+            panel1.TabIndex = 1;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(12, 12);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(230, 23);
+            comboBox1.TabIndex = 0;
+            comboBox1.Text = "                             MEMBERS";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // aboutus
             // 
@@ -75,14 +77,15 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "aboutus";
             Text = "aboutus";
+            Load += aboutus_Load;
             guna2GradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Panel panel1;
+        private ComboBox comboBox1;
     }
 }

@@ -94,6 +94,11 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
+            Connection conn = new Connection();
+        }
+
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
