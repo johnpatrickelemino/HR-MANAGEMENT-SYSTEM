@@ -40,6 +40,7 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            applicantform form = new applicantform();
             loadform(new applicantform());
         }
 

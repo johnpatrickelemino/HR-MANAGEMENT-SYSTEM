@@ -78,7 +78,7 @@
             guna2GradientPanel1.CustomizableEdges = customizableEdges19;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.Lime;
-            guna2GradientPanel1.FillColor2 = Color.Yellow;
+            guna2GradientPanel1.FillColor2 = Color.Green;
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
@@ -190,6 +190,7 @@
             guna2TextBox8.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox8.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox8.Font = new Font("Segoe UI", 9F);
+            guna2TextBox8.ForeColor = Color.Black;
             guna2TextBox8.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox8.Location = new Point(3, 287);
             guna2TextBox8.Name = "guna2TextBox8";
@@ -210,6 +211,7 @@
             guna2TextBox7.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox7.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox7.Font = new Font("Segoe UI", 9F);
+            guna2TextBox7.ForeColor = Color.Black;
             guna2TextBox7.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox7.Location = new Point(3, 218);
             guna2TextBox7.Name = "guna2TextBox7";
@@ -230,6 +232,7 @@
             guna2TextBox6.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox6.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox6.Font = new Font("Segoe UI", 9F);
+            guna2TextBox6.ForeColor = Color.Black;
             guna2TextBox6.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox6.Location = new Point(3, 149);
             guna2TextBox6.Name = "guna2TextBox6";
@@ -250,6 +253,7 @@
             guna2TextBox5.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             guna2TextBox5.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox5.Font = new Font("Segoe UI", 9F);
+            guna2TextBox5.ForeColor = Color.Black;
             guna2TextBox5.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox5.Location = new Point(3, 80);
             guna2TextBox5.Name = "guna2TextBox5";

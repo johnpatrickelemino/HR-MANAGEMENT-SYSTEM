@@ -33,10 +33,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            panel1 = new Panel();
+            comboBox1 = new ComboBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            comboBox1 = new ComboBox();
-            panel1 = new Panel();
             guna2GradientPanel1.SuspendLayout();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -49,13 +49,30 @@
             guna2GradientPanel1.CustomizableEdges = customizableEdges3;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.Yellow;
-            guna2GradientPanel1.FillColor2 = Color.Lime;
+            guna2GradientPanel1.FillColor2 = Color.Yellow;
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.Vertical;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2GradientPanel1.Size = new Size(600, 449);
             guna2GradientPanel1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(63, 138);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(478, 284);
+            panel1.TabIndex = 3;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(87, 98);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(419, 23);
+            comboBox1.TabIndex = 2;
+            comboBox1.Text = "--------------------------------select applicant -----------------------------------";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // guna2Panel1
             // 
@@ -78,23 +95,6 @@
             guna2HtmlLabel1.Size = new Size(333, 52);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "Viewing applicants";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(87, 98);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(419, 23);
-            comboBox1.TabIndex = 2;
-            comboBox1.Text = "--------------------------------select applicant -----------------------------------";
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(63, 138);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(478, 284);
-            panel1.TabIndex = 3;
             // 
             // view
             // 

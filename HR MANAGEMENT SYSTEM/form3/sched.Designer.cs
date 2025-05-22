@@ -68,12 +68,13 @@
             guna2GradientPanel1.Controls.Add(guna2GradientPanel3);
             guna2GradientPanel1.Controls.Add(showPanel);
             guna2GradientPanel1.CustomizableEdges = customizableEdges17;
-            guna2GradientPanel1.FillColor = Color.Lime;
+            guna2GradientPanel1.Dock = DockStyle.Fill;
+            guna2GradientPanel1.FillColor = Color.Yellow;
             guna2GradientPanel1.FillColor2 = Color.Yellow;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2GradientPanel1.Size = new Size(588, 455);
+            guna2GradientPanel1.Size = new Size(600, 450);
             guna2GradientPanel1.TabIndex = 0;
             // 
             // guna2GradientPanel3
@@ -89,8 +90,8 @@
             guna2GradientPanel3.Controls.Add(guna2Button1);
             guna2GradientPanel3.Controls.Add(guna2Button2);
             guna2GradientPanel3.CustomizableEdges = customizableEdges13;
-            guna2GradientPanel3.FillColor = Color.Lime;
-            guna2GradientPanel3.FillColor2 = Color.Yellow;
+            guna2GradientPanel3.FillColor = Color.Green;
+            guna2GradientPanel3.FillColor2 = Color.Green;
             guna2GradientPanel3.Location = new Point(55, 35);
             guna2GradientPanel3.Name = "guna2GradientPanel3";
             guna2GradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges14;
@@ -140,9 +141,10 @@
             // 
             // guna2DateTimePicker2
             // 
+            guna2DateTimePicker2.BackColor = Color.White;
             guna2DateTimePicker2.Checked = true;
             guna2DateTimePicker2.CustomizableEdges = customizableEdges3;
-            guna2DateTimePicker2.FillColor = Color.White;
+            guna2DateTimePicker2.FillColor = Color.Yellow;
             guna2DateTimePicker2.Font = new Font("Segoe UI", 9F);
             guna2DateTimePicker2.Format = DateTimePickerFormat.Short;
             guna2DateTimePicker2.Location = new Point(71, 51);
@@ -176,9 +178,10 @@
             // 
             // guna2DateTimePicker1
             // 
+            guna2DateTimePicker1.BackColor = Color.White;
             guna2DateTimePicker1.Checked = true;
             guna2DateTimePicker1.CustomizableEdges = customizableEdges7;
-            guna2DateTimePicker1.FillColor = Color.White;
+            guna2DateTimePicker1.FillColor = Color.Yellow;
             guna2DateTimePicker1.Font = new Font("Segoe UI", 9F);
             guna2DateTimePicker1.Format = DateTimePickerFormat.Time;
             guna2DateTimePicker1.Location = new Point(257, 7);
@@ -235,8 +238,8 @@
             showPanel.BackColor = Color.Transparent;
             showPanel.BorderRadius = 30;
             showPanel.CustomizableEdges = customizableEdges15;
-            showPanel.FillColor = Color.Lime;
-            showPanel.FillColor2 = Color.Yellow;
+            showPanel.FillColor = Color.Green;
+            showPanel.FillColor2 = Color.Green;
             showPanel.Location = new Point(55, 264);
             showPanel.Name = "showPanel";
             showPanel.ShadowDecoration.CustomizableEdges = customizableEdges16;

@@ -17,6 +17,7 @@ namespace HR_MANAGEMENT_SYSTEM
         {
             InitializeComponent();
         }
+        string pin = "1234";
         public void loadform(object Form)
         {
             if (this.mainpanel.Controls.Count > 0)
@@ -60,7 +61,17 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void button4_Click(object sender, EventArgs e)
         {
-            loadform(new eval());
+            MessageBox.Show("enter pin to access the system", "PIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string pin = Microsoft.VisualBasic.Interaction.InputBox("Enter PIN", "PIN", "", -1, -1);
+            if (pin == this.pin)
+            { 
+                loadform(new eval());
+            }
+            else
+            {
+                MessageBox.Show("Access denied", "PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void logoutbtn_Click(object sender, EventArgs e)
@@ -135,10 +146,16 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void schedbtn_Click(object sender, EventArgs e)
         {
-            loadform(new sched());
-
-
-
+            MessageBox.Show("enter pin to access the system", "PIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string pin = Microsoft.VisualBasic.Interaction.InputBox("Enter PIN", "PIN", "", -1, -1);
+            if (pin == this.pin)
+            {
+                loadform(new sched());
+            }
+            else
+            {
+                MessageBox.Show("Access denied", "PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void mainpanel_Paint(object sender, PaintEventArgs e)
@@ -148,7 +165,16 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void viewabtn_Click(object sender, EventArgs e)
         {
-            loadform(new view());
+            MessageBox.Show("enter pin to access the system", "PIN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string pin = Microsoft.VisualBasic.Interaction.InputBox("Enter PIN", "PIN", "", -1, -1);
+            if (pin == this.pin)
+            {
+               loadform(new view());
+            }
+            else
+            {
+                MessageBox.Show("Access denied", "PIN", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }  
         }
 
         private void button1_Click(object sender, EventArgs e)

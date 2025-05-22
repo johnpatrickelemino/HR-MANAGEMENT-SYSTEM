@@ -78,7 +78,7 @@
             guna2GradientPanel1.CustomizableEdges = customizableEdges19;
             guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.Lime;
-            guna2GradientPanel1.FillColor2 = Color.Yellow;
+            guna2GradientPanel1.FillColor2 = Color.Green;
             guna2GradientPanel1.GradientMode = System.Drawing.Drawing2D.LinearGradientMode.ForwardDiagonal;
             guna2GradientPanel1.Location = new Point(0, 0);
             guna2GradientPanel1.Name = "guna2GradientPanel1";

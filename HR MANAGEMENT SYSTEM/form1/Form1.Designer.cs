@@ -117,6 +117,7 @@
             usernameBox.FillColor = Color.Yellow;
             usernameBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             usernameBox.Font = new Font("Segoe UI", 9F);
+            usernameBox.ForeColor = Color.Black;
             usernameBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             usernameBox.IconRight = (Image)resources.GetObject("usernameBox.IconRight");
             usernameBox.IconRightOffset = new Point(5, 0);
@@ -220,6 +221,7 @@
             passwordBox.FillColor = Color.Yellow;
             passwordBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             passwordBox.Font = new Font("Segoe UI", 9F);
+            passwordBox.ForeColor = Color.Black;
             passwordBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             passwordBox.IconRight = (Image)resources.GetObject("passwordBox.IconRight");
             passwordBox.IconRightOffset = new Point(5, 0);

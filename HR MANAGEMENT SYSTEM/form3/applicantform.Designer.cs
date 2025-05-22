@@ -152,6 +152,7 @@
             resume.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             resume.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             resume.Font = new Font("Segoe UI", 9F);
+            resume.ForeColor = Color.Black;
             resume.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             resume.Location = new Point(12, 243);
             resume.Name = "resume";
@@ -173,6 +174,7 @@
             sex.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             sex.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             sex.Font = new Font("Segoe UI", 9F);
+            sex.ForeColor = Color.Black;
             sex.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             sex.Location = new Point(12, 186);
             sex.Name = "sex";
@@ -194,6 +196,7 @@
             jobtitle.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             jobtitle.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             jobtitle.Font = new Font("Segoe UI", 9F);
+            jobtitle.ForeColor = Color.Black;
             jobtitle.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             jobtitle.Location = new Point(12, 124);
             jobtitle.Name = "jobtitle";
@@ -215,6 +218,7 @@
             gmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             gmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             gmail.Font = new Font("Segoe UI", 9F);
+            gmail.ForeColor = Color.Black;
             gmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             gmail.Location = new Point(142, 74);
             gmail.Name = "gmail";
@@ -236,6 +240,7 @@
             age.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             age.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             age.Font = new Font("Segoe UI", 9F);
+            age.ForeColor = Color.Black;
             age.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             age.Location = new Point(12, 155);
             age.Name = "age";
@@ -258,6 +263,7 @@
             address.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             address.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             address.Font = new Font("Segoe UI", 9F);
+            address.ForeColor = Color.Black;
             address.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             address.Location = new Point(142, 43);
             address.Name = "address";
@@ -290,6 +296,7 @@
             fullname.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             fullname.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             fullname.Font = new Font("Segoe UI", 9F);
+            fullname.ForeColor = Color.Black;
             fullname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             fullname.Location = new Point(142, 12);
             fullname.Name = "fullname";

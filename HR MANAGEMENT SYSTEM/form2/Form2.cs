@@ -131,10 +131,11 @@ namespace HR_MANAGEMENT_SYSTEM
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "jpg.files|*.jpg|png.files|*.png|All files|*.*";
-            if (open.ShowDialog() == DialogResult.OK)
-            {
-                guna2PictureBox1.ImageLocation = open.FileName;
-            }
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    guna2PictureBox1.ImageLocation = open.FileName;
+                }
+           
         }
 
         private void guna2PictureBox1_Click_1(object sender, EventArgs e)
@@ -199,20 +200,26 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void applybtn_Click(object sender, EventArgs e)
         {
+            connectionString = "Server=localhost;Database=hr_management_system;Uid=root;Pwd=;";
             string fullname = fullnamebtn.Text;
             string address = addressbtn.Text;
             string gmail = gmailbtn.Text;
             int age = int.Parse(agebtn.Text);
             string sex = comboBox2.Text;
             string jobtitle = comboBox1.Text;
+            string pdfFile = guna2TextBox2.Text;
+            using (MemoryStream ms = new MemoryStream())
+                if (guna2PictureBox1.Image == null)
+                {
+                    MessageBox.Show("Please upload an image before applying.", "Image Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
             byte[] imageBytes;
             using (MemoryStream ms = new MemoryStream())
             {
                 guna2PictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                 imageBytes = ms.ToArray();
             }
-            byte[] pdfFile = File.ReadAllBytes("path_to_pdf_file.pdf");
-
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(connectionString))

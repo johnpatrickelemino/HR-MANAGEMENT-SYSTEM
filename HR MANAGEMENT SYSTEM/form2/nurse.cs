@@ -33,7 +33,7 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog File = new OpenFileDialog
+            OpenFileDialog file = new OpenFileDialog
             {
                 Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*",
                 Title = "Select a PDF File"
@@ -42,7 +42,7 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-            OpenFileDialog File = new OpenFileDialog
+            OpenFileDialog fiLe = new OpenFileDialog
             {
                 Filter = "PDF Files (*.pdf)|*.pdf|All Files (*.*)|*.*",
                 Title = "Select a PDF File"

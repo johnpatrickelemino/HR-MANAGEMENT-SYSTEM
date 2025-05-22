@@ -34,10 +34,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -52,14 +52,16 @@
             sidebartransit = new System.Windows.Forms.Timer(components);
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            mainpanel = new Guna.UI2.WinForms.Guna2GradientPanel();
-            label1 = new Label();
             guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            mainpanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            label1 = new Label();
+            label2 = new Label();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2CustomGradientPanel1.SuspendLayout();
+            mainpanel.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -210,10 +212,10 @@
             // guna2CustomGradientPanel1
             // 
             guna2CustomGradientPanel1.BackColor = SystemColors.ActiveCaptionText;
+            guna2CustomGradientPanel1.Controls.Add(label2);
             guna2CustomGradientPanel1.Controls.Add(guna2ControlBox2);
             guna2CustomGradientPanel1.Controls.Add(mainpanel);
             guna2CustomGradientPanel1.Controls.Add(guna2ControlBox1);
-            guna2CustomGradientPanel1.Controls.Add(label1);
             guna2CustomGradientPanel1.Controls.Add(guna2PictureBox1);
             guna2CustomGradientPanel1.CustomizableEdges = customizableEdges9;
             guna2CustomGradientPanel1.Dock = DockStyle.Fill;
@@ -229,29 +231,6 @@
             guna2CustomGradientPanel1.TabIndex = 0;
             guna2CustomGradientPanel1.Paint += guna2CustomGradientPanel1_Paint;
             // 
-            // mainpanel
-            // 
-            mainpanel.BackColor = Color.Transparent;
-            mainpanel.CustomizableEdges = customizableEdges5;
-            mainpanel.Location = new Point(182, 55);
-            mainpanel.Name = "mainpanel";
-            mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            mainpanel.Size = new Size(619, 498);
-            mainpanel.TabIndex = 2;
-            mainpanel.Paint += guna2GradientPanel1_Paint;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(69, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(394, 40);
-            label1.TabIndex = 1;
-            label1.Text = "HR MANAGEMENT SYSTEM";
-            label1.Click += label1_Click;
-            // 
             // guna2ControlBox2
             // 
             guna2ControlBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -265,6 +244,20 @@
             guna2ControlBox2.Size = new Size(45, 29);
             guna2ControlBox2.TabIndex = 9;
             // 
+            // mainpanel
+            // 
+            mainpanel.BackColor = Color.Transparent;
+            mainpanel.BackgroundImage = (Image)resources.GetObject("mainpanel.BackgroundImage");
+            mainpanel.BackgroundImageLayout = ImageLayout.Center;
+            mainpanel.Controls.Add(label1);
+            mainpanel.CustomizableEdges = customizableEdges5;
+            mainpanel.Location = new Point(182, 55);
+            mainpanel.Name = "mainpanel";
+            mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            mainpanel.Size = new Size(619, 498);
+            mainpanel.TabIndex = 2;
+            mainpanel.Paint += guna2GradientPanel1_Paint;
+            // 
             // guna2ControlBox1
             // 
             guna2ControlBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -277,6 +270,29 @@
             guna2ControlBox1.Size = new Size(45, 29);
             guna2ControlBox1.TabIndex = 8;
             guna2ControlBox1.Click += guna2ControlBox1_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(142, 98);
+            label1.Name = "label1";
+            label1.Size = new Size(394, 40);
+            label1.TabIndex = 1;
+            label1.Text = "HR MANAGEMENT SYSTEM";
+            label1.Click += label1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(97, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(197, 40);
+            label2.TabIndex = 2;
+            label2.Text = "DASHBOARD";
             // 
             // Form3
             // 
@@ -295,6 +311,8 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).EndInit();
             guna2CustomGradientPanel1.ResumeLayout(false);
             guna2CustomGradientPanel1.PerformLayout();
+            mainpanel.ResumeLayout(false);
+            mainpanel.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -315,5 +333,6 @@
         private Guna.UI2.WinForms.Guna2GradientPanel mainpanel;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Label label2;
     }
 }

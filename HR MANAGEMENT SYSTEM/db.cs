@@ -70,9 +70,7 @@ namespace research
                             cmd1.Parameters.AddWithValue("@file", resumePdf);
                             cmd1.ExecuteNonQuery();
                         }
-                        string fileQuery = @"INSERT INTO Professor_files 
-                    (diploma_file, license_file, transcript_file, valid_id_file) 
-                    VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
+                        string fileQuery = @"INSERT INTO Professor_files (diploma_file, license_file, transcript_file, valid_id_file) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
                         using (MySqlCommand cmd2 = new MySqlCommand(fileQuery, connection, transaction))
                         {
                             cmd2.Parameters.AddWithValue("@diplomaFile", diplomaFile);
