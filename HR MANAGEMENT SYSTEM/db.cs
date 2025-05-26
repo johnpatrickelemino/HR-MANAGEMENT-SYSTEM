@@ -66,7 +66,7 @@ namespace research
                         cmd.Parameters.AddWithValue("@jobtitle", jobtitle);
                         cmd.Parameters.AddWithValue("@image", imageBytes);
                         cmd.Parameters.AddWithValue("@file", resumePdf);
-                        cmd.ExecuteNonQuery();
+                        cmd.ExecuteNonQuery(); 
                     }
                 }
                 return true;

@@ -47,7 +47,7 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void label4_Click(object sender, EventArgs e)
         {
-            applicantform form = new applicantform();
+            Applicantform form = new Applicantform();
             form.Show();
 
         }
@@ -88,7 +88,7 @@ namespace HR_MANAGEMENT_SYSTEM
         private void applicantbuton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            applicantform form = new applicantform();
+            Applicantform form = new Applicantform();
             form.Show();
         }
 

@@ -12,16 +12,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using MySql.Data.MySqlClient;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
     public partial class sched : Form
     {
+        string connectionString;
         public sched()
         {
             InitializeComponent();
+            FillComboBox();
         }
-
+        public void loadform(object Form)
+        {
+            if (this.panel1.Controls.Count > 0)
+                this.panel1.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.panel1.Controls.Add(f);
+            this.panel1.Tag = f;
+            f.Show();
+        }
+        void FillComboBox()
+        {
+            connectionString = "Server=localhost;Database=hr;Uid=root;Pwd=;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT fullname FROM Applicants;";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        comboBox1.Items.Clear();
+                        while (reader.Read())
+                        {
+                            string sName = reader["fullname"].ToString();
+                            comboBox1.Items.Add(sName);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading databases: " + ex.Message);
+                }
+            }
+        }
         private void sched_Load(object sender, EventArgs e)
         {
             var recruitment = new List<Recruitment> {
@@ -34,9 +73,6 @@ namespace HR_MANAGEMENT_SYSTEM
             comboBox2.DisplayMember = "recruitment";
             comboBox2.ValueMember = "id";
             comboBox2.SelectedIndex = 0;
-
-            showPanel.Visible = false;
-
             guna2DateTimePicker1.Format = DateTimePickerFormat.Time;
             guna2DateTimePicker1.ShowUpDown = true;
             guna2DateTimePicker2.Format = DateTimePickerFormat.Short;
@@ -90,7 +126,7 @@ namespace HR_MANAGEMENT_SYSTEM
         }
 
         private void showPanel_Paint(object sender, PaintEventArgs e)
-        {
+        { 
 
         }
 
@@ -186,6 +222,12 @@ namespace HR_MANAGEMENT_SYSTEM
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            viewform form = new viewform();
+            loadform(new viewform());
         }
     }
 }

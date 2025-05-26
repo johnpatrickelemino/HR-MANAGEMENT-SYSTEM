@@ -14,11 +14,11 @@ using System.Transactions;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
-    public partial class applicantform : Form
+    public partial class Applicantform : Form
     {
         private string connectionString;
 
-        public applicantform()
+        public Applicantform()
         {
             InitializeComponent();
         }

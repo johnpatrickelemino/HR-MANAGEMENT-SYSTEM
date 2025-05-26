@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using HR_MANAGEMENT_SYSTEM.form3;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,33 @@ namespace HR_MANAGEMENT_SYSTEM
         public eval()
         {
             InitializeComponent();
+            FillComboBox();
+        }
+        void FillComboBox()
+        {
+            connectionString = "Server=localhost;Database=hr;Uid=root;Pwd=;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT fullname FROM Applicants;";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        comboBox1.Items.Clear();
+                        while (reader.Read())
+                        {
+                           string sName = reader["fullname"].ToString();
+                            comboBox1.Items.Add(sName);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading databases: " + ex.Message);
+                }
+            }
         }
         public void loadform(object Form)
         {
@@ -41,31 +69,6 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string connectionString = "server=localhost;database=hr;uid=root;pwd=your_password;";
-
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-
-                    string query = "SELECT fullname FROM applicants";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        comboBox1.Items.Clear(); // Clear previous items if any
-
-                        while (reader.Read())
-                        {
-                            comboBox1.Items.Add(reader["fullname"].ToString());
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error loading fullnames: " + ex.Message);
-                }
-            }
             applicantform form = new applicantform();
             loadform(new applicantform());
         }

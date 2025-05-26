@@ -18,6 +18,33 @@ namespace HR_MANAGEMENT_SYSTEM
         public view()
         {
             InitializeComponent();
+            FillComboBox(); 
+        }
+        void FillComboBox()
+        {
+            connectionString = "Server=localhost;Database=hr;Uid=root;Pwd=;";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT fullname FROM Applicants;";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        comboBox1.Items.Clear();
+                        while (reader.Read())
+                        {
+                            string sName = reader["fullname"].ToString();
+                            comboBox1.Items.Add(sName);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading databases: " + ex.Message);
+                }
+            }
         }
 
         public void loadform(object Form)
@@ -66,13 +93,13 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            loadform(new viewform());
 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            loadform(new viewform());
+            
         }
     }
 }

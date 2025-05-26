@@ -82,6 +82,7 @@
             applipic.SizeMode = PictureBoxSizeMode.Zoom;
             applipic.TabIndex = 0;
             applipic.TabStop = false;
+            applipic.Click += applipic_Click;
             // 
             // guna2GradientPanel1
             // 

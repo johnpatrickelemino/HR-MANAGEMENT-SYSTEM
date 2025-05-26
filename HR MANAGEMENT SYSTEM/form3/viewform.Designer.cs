@@ -51,6 +51,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            checkedListBox1 = new CheckedListBox();
             resume = new Guna.UI2.WinForms.Guna2TextBox();
             sex = new Guna.UI2.WinForms.Guna2TextBox();
             jobtitle = new Guna.UI2.WinForms.Guna2TextBox();
@@ -61,7 +62,6 @@
             fullname = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             applipic = new Guna.UI2.WinForms.Guna2PictureBox();
-            checkedListBox1 = new CheckedListBox();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)applipic).BeginInit();
             SuspendLayout();
@@ -87,6 +87,18 @@
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
             guna2GradientPanel1.Size = new Size(478, 284);
             guna2GradientPanel1.TabIndex = 2;
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.BackColor = Color.Lime;
+            checkedListBox1.BorderStyle = BorderStyle.None;
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Items.AddRange(new object[] { "initial interview", "teaching demo" });
+            checkedListBox1.Location = new Point(247, 124);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(192, 126);
+            checkedListBox1.TabIndex = 9;
+            checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
             // 
             // resume
             // 
@@ -266,18 +278,6 @@
             applipic.SizeMode = PictureBoxSizeMode.Zoom;
             applipic.TabIndex = 0;
             applipic.TabStop = false;
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.BackColor = Color.Lime;
-            checkedListBox1.BorderStyle = BorderStyle.None;
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "initial interview", "teaching demo" });
-            checkedListBox1.Location = new Point(247, 124);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(192, 126);
-            checkedListBox1.TabIndex = 9;
-            checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
             // 
             // viewform
             // 
