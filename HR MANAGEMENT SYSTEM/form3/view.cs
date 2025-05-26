@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HR_MANAGEMENT_SYSTEM.form3;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +14,26 @@ namespace HR_MANAGEMENT_SYSTEM
 {
     public partial class view : Form
     {
+        private string connectionString; 
         public view()
         {
             InitializeComponent();
         }
 
+        public void loadform(object Form)
+        {
+            if (this.panel1.Controls.Count > 0)
+                this.panel1.Controls.RemoveAt(0);
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.panel1.Controls.Add(f);
+            this.panel1.Tag = f;
+            f.Show();
+        }
+       
+
+      
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -49,7 +66,13 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            loadform(new viewform());
         }
     }
 }

@@ -63,15 +63,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(478, 284);
             panel1.TabIndex = 3;
+            panel1.Paint += panel1_Paint;
             // 
             // comboBox1
             // 
+            comboBox1.DisplayMember = "fullname";
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(87, 98);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(419, 23);
             comboBox1.TabIndex = 2;
             comboBox1.Text = "--------------------------------select applicant -----------------------------------";
+            comboBox1.ValueMember = "id";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // guna2Panel1

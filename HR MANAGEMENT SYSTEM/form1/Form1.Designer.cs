@@ -227,12 +227,14 @@
             passwordBox.IconRightOffset = new Point(5, 0);
             passwordBox.Location = new Point(27, 264);
             passwordBox.Name = "passwordBox";
+            passwordBox.PasswordChar = '*';
             passwordBox.PlaceholderForeColor = Color.Black;
             passwordBox.PlaceholderText = "password";
             passwordBox.SelectedText = "";
             passwordBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
             passwordBox.Size = new Size(328, 41);
             passwordBox.TabIndex = 9;
+            passwordBox.UseSystemPasswordChar = true;
             passwordBox.TextChanged += password_TextChanged;
             // 
             // Form1

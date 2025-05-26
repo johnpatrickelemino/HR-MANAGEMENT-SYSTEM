@@ -103,6 +103,7 @@
             guna2Button5.Size = new Size(150, 30);
             guna2Button5.TabIndex = 13;
             guna2Button5.Text = "Submit";
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // guna2Button4
             // 

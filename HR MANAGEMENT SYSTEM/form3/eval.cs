@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace HR_MANAGEMENT_SYSTEM
 {
     public partial class eval : Form
     {
+        private string connectionString;
         public eval()
         {
             InitializeComponent();
@@ -27,7 +29,6 @@ namespace HR_MANAGEMENT_SYSTEM
             this.showPanel.Tag = f;
             f.Show();
         }
-
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -40,6 +41,31 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string connectionString = "server=localhost;database=hr;uid=root;pwd=your_password;";
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    string query = "SELECT fullname FROM applicants";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        comboBox1.Items.Clear(); // Clear previous items if any
+
+                        while (reader.Read())
+                        {
+                            comboBox1.Items.Add(reader["fullname"].ToString());
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading fullnames: " + ex.Message);
+                }
+            }
             applicantform form = new applicantform();
             loadform(new applicantform());
         }

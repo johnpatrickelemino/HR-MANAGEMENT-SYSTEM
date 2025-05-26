@@ -79,12 +79,14 @@
             // 
             // comboBox1
             // 
+            comboBox1.DisplayMember = "fullname";
             comboBox1.FormattingEnabled = true;
             comboBox1.Location = new Point(43, 72);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(500, 23);
             comboBox1.TabIndex = 2;
             comboBox1.Text = "                                                 ------------Select applicant------------";
+            comboBox1.ValueMember = "id";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // eval

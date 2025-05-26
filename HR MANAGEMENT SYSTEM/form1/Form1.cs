@@ -66,7 +66,8 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            this.Close();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -127,7 +128,6 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2ControlBox2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
     }
 }

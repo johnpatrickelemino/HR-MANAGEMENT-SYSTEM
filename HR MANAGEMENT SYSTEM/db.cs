@@ -10,7 +10,7 @@ namespace research
 
         {
             string server = "localhost";
-            string database = "HR";
+            string database = "hr";
             string uid = "root";
             string password = "";
             connectionString = $"SERVER={server};DATABASE={database};UID={uid};PASSWORD={password};";
@@ -39,7 +39,7 @@ namespace research
 
             }
         }
-        public bool SubmitApplicationWithFiles(string fullname,string address,string gmail,int age,string sex,string jobtitle,Image image,byte[] resumePdf, byte[] diplomaFile,byte[] licenseFile,byte[] transcriptFile,byte[] validIdFile)
+        public bool applicants(string fullname, string address, string gmail, int age, string sex, string jobtitle, Image image, byte[] resumePdf)
         {
             try
             {
@@ -53,43 +53,59 @@ namespace research
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    using (MySqlTransaction transaction = connection.BeginTransaction())
+                    string applicantQuery = @"INSERT INTO applicants 
+                (fullname, address, gmail, age, sex, jobtitle, image, file) 
+                VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
+                    using (MySqlCommand cmd = new MySqlCommand(applicantQuery, connection))
                     {
-                        string applicantQuery = @"INSERT INTO applicants 
-                    (fullname, address, gmail, age, sex, jobtitle, image, file) 
-                    VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
-                        using (MySqlCommand cmd1 = new MySqlCommand(applicantQuery, connection, transaction))
-                        {
-                            cmd1.Parameters.AddWithValue("@fullname", fullname);
-                            cmd1.Parameters.AddWithValue("@address", address);
-                            cmd1.Parameters.AddWithValue("@gmail", gmail);
-                            cmd1.Parameters.AddWithValue("@age", age);
-                            cmd1.Parameters.AddWithValue("@sex", sex);
-                            cmd1.Parameters.AddWithValue("@jobtitle", jobtitle);
-                            cmd1.Parameters.AddWithValue("@image", imageBytes);
-                            cmd1.Parameters.AddWithValue("@file", resumePdf);
-                            cmd1.ExecuteNonQuery();
-                        }
-                        string fileQuery = @"INSERT INTO Professor_files (diploma_file, license_file, transcript_file, valid_id_file) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
-                        using (MySqlCommand cmd2 = new MySqlCommand(fileQuery, connection, transaction))
-                        {
-                            cmd2.Parameters.AddWithValue("@diplomaFile", diplomaFile);
-                            cmd2.Parameters.AddWithValue("@licenseFile", licenseFile);
-                            cmd2.Parameters.AddWithValue("@transcriptFile", transcriptFile);
-                            cmd2.Parameters.AddWithValue("@validIdFile", validIdFile);
-                            cmd2.ExecuteNonQuery();
-                        }
-                        transaction.Commit();
-                        return true;
+                        cmd.Parameters.AddWithValue("@fullname", fullname);
+                        cmd.Parameters.AddWithValue("@address", address);
+                        cmd.Parameters.AddWithValue("@gmail", gmail);
+                        cmd.Parameters.AddWithValue("@age", age);
+                        cmd.Parameters.AddWithValue("@sex", sex);
+                        cmd.Parameters.AddWithValue("@jobtitle", jobtitle);
+                        cmd.Parameters.AddWithValue("@image", imageBytes);
+                        cmd.Parameters.AddWithValue("@file", resumePdf);
+                        cmd.ExecuteNonQuery();
                     }
                 }
+                return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error: " + ex.Message);
+                Console.WriteLine("Error inserting applicant info: " + ex.Message);
                 return false;
             }
         }
+
+        public bool ProfessorForm(byte[] diplomaFile, byte[] licenseFile, byte[] transcriptFile, byte[] validIdFile)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string fileQuery = @"INSERT INTO Professor_files 
+                (diploma_file, license_file, transcript_file, valid_id_file) 
+                VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
+                    using (MySqlCommand cmd = new MySqlCommand(fileQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@diplomaFile", diplomaFile);
+                        cmd.Parameters.AddWithValue("@licenseFile", licenseFile);
+                        cmd.Parameters.AddWithValue("@transcriptFile", transcriptFile);
+                        cmd.Parameters.AddWithValue("@validIdFile", validIdFile);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error inserting professor files: " + ex.Message);
+                return false;
+            }
+        }
+
 
         public bool nurseForm(byte[] pdffile, byte[] diplomaFile, byte[] licenseFile, byte[] transcriptFile, byte[] validIdFile)
         {
@@ -98,10 +114,9 @@ namespace research
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = @"INSERT INTO Nurse_files (diploma_file, license_file, transcript_file, valid_id_file) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
+                    string query = @"INSERT INTO Nurse_files (diplomaFile, licenseFile, transcriptFile, validIdFile) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@pdfFile", pdffile);
                         cmd.Parameters.AddWithValue("@diplomaFile", diplomaFile);
                         cmd.Parameters.AddWithValue("@licenseFile", licenseFile);
                         cmd.Parameters.AddWithValue("@transcriptFile", transcriptFile);
@@ -127,7 +142,6 @@ namespace research
                     string query = @"INSERT INTO Librarian_files (diploma_file, license_file, transcript_file, valid_id_file) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@pdfFile", pdffile);
                         cmd.Parameters.AddWithValue("@diplomaFile", diplomaFile);
                         cmd.Parameters.AddWithValue("@licenseFile", licenseFile);
                         cmd.Parameters.AddWithValue("@transcriptFile", transcriptFile);

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Transactions;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
@@ -200,25 +201,49 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void applybtn_Click(object sender, EventArgs e)
         {
-            connectionString = "Server=localhost;Database=hr_management_system;Uid=root;Pwd=;";
-            string fullname = fullnamebtn.Text;
-            string address = addressbtn.Text;
-            string gmail = gmailbtn.Text;
-            int age = int.Parse(agebtn.Text);
+            string connectionString = "Server=localhost;Database=hr;Uid=root;Pwd=;";
+            string fullname = fullnamebtn.Text.Trim();
+            string address = addressbtn.Text.Trim();
+            string gmail = gmailbtn.Text.Trim();
             string sex = comboBox2.Text;
             string jobtitle = comboBox1.Text;
-            string pdfFile = guna2TextBox2.Text;
-            using (MemoryStream ms = new MemoryStream())
-                if (guna2PictureBox1.Image == null)
-                {
-                    MessageBox.Show("Please upload an image before applying.", "Image Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-            byte[] imageBytes;
-            using (MemoryStream ms = new MemoryStream())
+            string pdfFile = guna2TextBox2.Text.Trim();
+            if (string.IsNullOrWhiteSpace(fullname) ||
+                string.IsNullOrWhiteSpace(address) ||
+                string.IsNullOrWhiteSpace(gmail) ||
+                string.IsNullOrWhiteSpace(sex) ||
+                string.IsNullOrWhiteSpace(jobtitle) ||
+                string.IsNullOrWhiteSpace(pdfFile))
             {
-                guna2PictureBox1.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                imageBytes = ms.ToArray();
+                MessageBox.Show("Please fill in all required fields.", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!int.TryParse(agebtn.Text.Trim(), out int age))
+            {
+                MessageBox.Show("Please enter a valid numeric age.", "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (guna2PictureBox1.Image == null)
+            {
+                MessageBox.Show("Please upload an image before applying.", "Image Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            byte[] imageBytes;
+            try
+            {
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    using (Bitmap bmp = new Bitmap(guna2PictureBox1.Image))
+                    {
+                        bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    }
+                    imageBytes = ms.ToArray();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to process image: " + ex.Message, "Image Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             try
             {
@@ -226,8 +251,7 @@ namespace HR_MANAGEMENT_SYSTEM
                 {
                     connection.Open();
                     string query = @"INSERT INTO applicants 
-                            (fullname, address, gmail, age, sex, jobtitle, image, file) VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
-
+                         (fullname, address, gmail, age, sex, jobtitle, image, file)  VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@fullname", fullname);
@@ -242,18 +266,18 @@ namespace HR_MANAGEMENT_SYSTEM
                         int result = cmd.ExecuteNonQuery();
                         if (result > 0)
                         {
-                            MessageBox.Show("Application saved successfully!");
+                            MessageBox.Show("Application saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Failed to save application.");
+                            MessageBox.Show("Failed to save application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
