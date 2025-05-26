@@ -41,40 +41,15 @@ namespace HR_MANAGEMENT_SYSTEM.form3
 
         private void applipic_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=hr;Uid=root;Pwd=;";
-            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT image FROM Applicants WHERE fullname = @fullname;";
-                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@fullname", fullname);
-
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            if (reader.Read() && !reader.IsDBNull(0))
-                            {
-                                byte[] imgData = (byte[])reader["image"];
-                                using (MemoryStream ms = new MemoryStream(imgData))
-                                {
-                                    applipic.Image = Image.FromStream(ms);
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("No image found for this applicant.");
-                            }
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                }
+                applipic.Image = Image.FromFile(openFileDialog.FileName);
             }
         }
-  
+        
     }
+  
+    
 }

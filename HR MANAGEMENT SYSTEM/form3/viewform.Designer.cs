@@ -93,10 +93,10 @@
             checkedListBox1.BackColor = Color.Lime;
             checkedListBox1.BorderStyle = BorderStyle.None;
             checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "initial interview", "teaching demo" });
-            checkedListBox1.Location = new Point(247, 124);
+            checkedListBox1.Items.AddRange(new object[] { "initial interview", "teaching demo", "final interview" });
+            checkedListBox1.Location = new Point(80, 157);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(192, 126);
+            checkedListBox1.Size = new Size(192, 54);
             checkedListBox1.TabIndex = 9;
             checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
             // 

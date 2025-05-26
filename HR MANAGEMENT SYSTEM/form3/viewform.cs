@@ -21,14 +21,19 @@ namespace HR_MANAGEMENT_SYSTEM.form3
         {
 
         }
+        private void SaveCheckedItems()
+        {
+            List<string> checkedItems = new List<string>();
+            foreach (var item in checkedListBox1.CheckedItems)
+            {
+                checkedItems.Add(item.ToString());
+            }
+            string result = string.Join(", ", checkedItems);
+        }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (checkedListBox1.SelectedItem != null)
-            {
-                string selectedItem = checkedListBox1.SelectedItem.ToString();
-                MessageBox.Show("Selected item: " + selectedItem);
-            }
-        }
-    }
+            this.BeginInvoke(new Action(SaveCheckedItems));
+         }
+     }
 }
