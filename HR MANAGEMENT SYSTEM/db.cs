@@ -77,7 +77,7 @@ namespace research
             }
         }
 
-        public bool applicants(string fullname, string address, string gmail, int age, string sex, string jobtitle, Image image, byte[] resumePdf)
+        public bool applicants(string fullname, string address, string gmail, int age, string sex, string jobtitle, Image image, byte[] resumePdf, string resumePath)
         {
             try
             {
@@ -87,13 +87,12 @@ namespace research
                     image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                     imageBytes = ms.ToArray();
                 }
-
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
                     string applicantQuery = @"INSERT INTO applicants 
-                (fullname, address, gmail, age, sex, jobtitle, image, file) 
-                VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
+                (fullname, address, gmail, age, sex, jobtitle, image, file, filepath) 
+                VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file, @filepath)";
                     using (MySqlCommand cmd = new MySqlCommand(applicantQuery, connection))
                     {
                         cmd.Parameters.AddWithValue("@fullname", fullname);
@@ -104,6 +103,9 @@ namespace research
                         cmd.Parameters.AddWithValue("@jobtitle", jobtitle);
                         cmd.Parameters.AddWithValue("@image", imageBytes);
                         cmd.Parameters.AddWithValue("@file", resumePdf);
+                        cmd.Parameters.AddWithValue("@filepath",resumePath);
+
+
                         cmd.ExecuteNonQuery(); 
                     }
                 }
@@ -122,7 +124,7 @@ namespace research
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string fileQuery = @"INSERT INTO Professor_files 
+                    string fileQuery = @"INSERT INTO professor_files 
                 (diploma_file, license_file, transcript_file, valid_id_file) 
                 VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
                     using (MySqlCommand cmd = new MySqlCommand(fileQuery, connection))
@@ -151,7 +153,7 @@ namespace research
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = @"INSERT INTO Nurse_files (diplomaFile, licenseFile, transcriptFile, validIdFile) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
+                    string query = @"INSERT INTO nurse_files (diplomaFile, licenseFile, transcriptFile, validIdFile) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@diplomaFile", diplomaFile);
@@ -176,7 +178,7 @@ namespace research
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = @"INSERT INTO Librarian_files (diploma_file, license_file, transcript_file, valid_id_file) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
+                    string query = @"INSERT INTO librarian_files (diploma_file, license_file, transcript_file, valid_id_file) VALUES (@diplomaFile, @licenseFile, @transcriptFile, @validIdFile)";
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
                         cmd.Parameters.AddWithValue("@diplomaFile", diplomaFile);

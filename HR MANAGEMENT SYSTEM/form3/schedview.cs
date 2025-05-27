@@ -11,33 +11,19 @@ using System.Windows.Forms;
 
 namespace HR_MANAGEMENT_SYSTEM.form3
 {
-    public partial class viewform : Form
+    public partial class schedview : Form
     {
-        public viewform()
+        public schedview()
         {
             InitializeComponent();
         }
 
-        private void passed_Click(object sender, EventArgs e)
+        private void schedview_Load(object sender, EventArgs e)
         {
 
         }
-        private void SaveCheckedItems()
-        {
-            List<string> checkedItems = new List<string>();
-            foreach (var item in checkedListBox1.CheckedItems)
-            {
-                checkedItems.Add(item.ToString());
-            }
-            string result = string.Join(", ", checkedItems);
-        }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.BeginInvoke(new Action(SaveCheckedItems));
-        }
-
-        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        private void guna2GradientPanel2_Paint(object sender, PaintEventArgs e)
         {
             string connectionString = "Server=localhost;Database=hr;Uid=root;Pwd=;";
             string applicantFullName = fullname.Text;

@@ -1,6 +1,6 @@
 ﻿namespace HR_MANAGEMENT_SYSTEM.form3
 {
-    partial class viewform
+    partial class schedview
     {
         /// <summary>
         /// Required designer variable.
@@ -48,8 +48,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            checkedListBox1 = new CheckedListBox();
+            guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             sex = new Guna.UI2.WinForms.Guna2TextBox();
             jobtitle = new Guna.UI2.WinForms.Guna2TextBox();
             gmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,43 +58,30 @@
             fullname = new Guna.UI2.WinForms.Guna2TextBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             applipic = new Guna.UI2.WinForms.Guna2PictureBox();
-            guna2GradientPanel1.SuspendLayout();
+            guna2GradientPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)applipic).BeginInit();
             SuspendLayout();
             // 
-            // guna2GradientPanel1
+            // guna2GradientPanel2
             // 
-            guna2GradientPanel1.BackColor = Color.Lime;
-            guna2GradientPanel1.Controls.Add(checkedListBox1);
-            guna2GradientPanel1.Controls.Add(sex);
-            guna2GradientPanel1.Controls.Add(jobtitle);
-            guna2GradientPanel1.Controls.Add(gmail);
-            guna2GradientPanel1.Controls.Add(age);
-            guna2GradientPanel1.Controls.Add(address);
-            guna2GradientPanel1.Controls.Add(guna2Panel2);
-            guna2GradientPanel1.Controls.Add(fullname);
-            guna2GradientPanel1.Controls.Add(guna2Panel1);
-            guna2GradientPanel1.Controls.Add(applipic);
-            guna2GradientPanel1.CustomizableEdges = customizableEdges19;
-            guna2GradientPanel1.Dock = DockStyle.Fill;
-            guna2GradientPanel1.Location = new Point(0, 0);
-            guna2GradientPanel1.Name = "guna2GradientPanel1";
-            guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2GradientPanel1.Size = new Size(478, 284);
-            guna2GradientPanel1.TabIndex = 2;
-            guna2GradientPanel1.Paint += guna2GradientPanel1_Paint;
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.BackColor = Color.Lime;
-            checkedListBox1.BorderStyle = BorderStyle.None;
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "initial interview", "teaching demo", "final interview" });
-            checkedListBox1.Location = new Point(12, 217);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(192, 54);
-            checkedListBox1.TabIndex = 9;
-            checkedListBox1.SelectedIndexChanged += checkedListBox1_SelectedIndexChanged;
+            guna2GradientPanel2.BackColor = Color.Green;
+            guna2GradientPanel2.Controls.Add(sex);
+            guna2GradientPanel2.Controls.Add(jobtitle);
+            guna2GradientPanel2.Controls.Add(gmail);
+            guna2GradientPanel2.Controls.Add(age);
+            guna2GradientPanel2.Controls.Add(address);
+            guna2GradientPanel2.Controls.Add(guna2Panel2);
+            guna2GradientPanel2.Controls.Add(fullname);
+            guna2GradientPanel2.Controls.Add(guna2Panel1);
+            guna2GradientPanel2.Controls.Add(applipic);
+            guna2GradientPanel2.CustomizableEdges = customizableEdges19;
+            guna2GradientPanel2.Dock = DockStyle.Fill;
+            guna2GradientPanel2.Location = new Point(0, 0);
+            guna2GradientPanel2.Name = "guna2GradientPanel2";
+            guna2GradientPanel2.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2GradientPanel2.Size = new Size(488, 226);
+            guna2GradientPanel2.TabIndex = 4;
+            guna2GradientPanel2.Paint += guna2GradientPanel2_Paint;
             // 
             // sex
             // 
@@ -108,6 +94,7 @@
             sex.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             sex.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             sex.Font = new Font("Segoe UI", 9F);
+            sex.ForeColor = Color.Black;
             sex.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             sex.Location = new Point(12, 186);
             sex.Name = "sex";
@@ -129,6 +116,7 @@
             jobtitle.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             jobtitle.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             jobtitle.Font = new Font("Segoe UI", 9F);
+            jobtitle.ForeColor = Color.Black;
             jobtitle.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             jobtitle.Location = new Point(12, 124);
             jobtitle.Name = "jobtitle";
@@ -150,6 +138,7 @@
             gmail.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             gmail.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             gmail.Font = new Font("Segoe UI", 9F);
+            gmail.ForeColor = Color.Black;
             gmail.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             gmail.Location = new Point(142, 74);
             gmail.Name = "gmail";
@@ -157,7 +146,7 @@
             gmail.ReadOnly = true;
             gmail.SelectedText = "";
             gmail.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            gmail.Size = new Size(324, 25);
+            gmail.Size = new Size(336, 25);
             gmail.TabIndex = 5;
             // 
             // age
@@ -171,6 +160,7 @@
             age.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             age.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             age.Font = new Font("Segoe UI", 9F);
+            age.ForeColor = Color.Black;
             age.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             age.Location = new Point(12, 155);
             age.Name = "age";
@@ -192,6 +182,7 @@
             address.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             address.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             address.Font = new Font("Segoe UI", 9F);
+            address.ForeColor = Color.Black;
             address.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             address.Location = new Point(142, 43);
             address.Name = "address";
@@ -199,7 +190,7 @@
             address.ReadOnly = true;
             address.SelectedText = "";
             address.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            address.Size = new Size(324, 25);
+            address.Size = new Size(336, 25);
             address.TabIndex = 2;
             // 
             // guna2Panel2
@@ -223,6 +214,7 @@
             fullname.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             fullname.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             fullname.Font = new Font("Segoe UI", 9F);
+            fullname.ForeColor = Color.Black;
             fullname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             fullname.Location = new Point(142, 12);
             fullname.Name = "fullname";
@@ -230,7 +222,7 @@
             fullname.ReadOnly = true;
             fullname.SelectedText = "";
             fullname.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            fullname.Size = new Size(324, 25);
+            fullname.Size = new Size(336, 25);
             fullname.TabIndex = 0;
             // 
             // guna2Panel1
@@ -255,23 +247,24 @@
             applipic.TabIndex = 0;
             applipic.TabStop = false;
             // 
-            // viewform
+            // schedview
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(478, 284);
-            Controls.Add(guna2GradientPanel1);
+            ClientSize = new Size(488, 226);
+            Controls.Add(guna2GradientPanel2);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "viewform";
-            Text = "viewform";
-            guna2GradientPanel1.ResumeLayout(false);
+            Name = "schedview";
+            Text = "schedview";
+            Load += schedview_Load;
+            guna2GradientPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)applipic).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2TextBox sex;
         private Guna.UI2.WinForms.Guna2TextBox jobtitle;
         private Guna.UI2.WinForms.Guna2TextBox gmail;
@@ -281,6 +274,5 @@
         private Guna.UI2.WinForms.Guna2TextBox fullname;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2PictureBox applipic;
-        private CheckedListBox checkedListBox1;
     }
 }

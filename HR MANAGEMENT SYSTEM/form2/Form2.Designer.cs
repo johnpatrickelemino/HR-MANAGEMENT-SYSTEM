@@ -31,10 +31,10 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -62,8 +62,8 @@
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
-            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             mainpanel = new Guna.UI2.WinForms.Guna2Panel();
+            guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             applybtn = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -107,7 +107,6 @@
             guna2GradientPanel1.Controls.Add(fullnamebtn);
             guna2GradientPanel1.Controls.Add(label3);
             guna2GradientPanel1.CustomizableEdges = customizableEdges21;
-            guna2GradientPanel1.Dock = DockStyle.Fill;
             guna2GradientPanel1.FillColor = Color.Green;
             guna2GradientPanel1.FillColor2 = Color.Green;
             guna2GradientPanel1.Location = new Point(0, 0);
@@ -138,6 +137,16 @@
             comboBox1.Text = "jobtitle";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
+            // mainpanel
+            // 
+            mainpanel.CustomizableEdges = customizableEdges1;
+            mainpanel.Location = new Point(503, 57);
+            mainpanel.Name = "mainpanel";
+            mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            mainpanel.Size = new Size(288, 371);
+            mainpanel.TabIndex = 17;
+            mainpanel.Paint += mainpanel_Paint;
+            // 
             // guna2TextBox2
             // 
             guna2TextBox2.CustomizableEdges = customizableEdges3;
@@ -157,16 +166,6 @@
             guna2TextBox2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2TextBox2.Size = new Size(210, 22);
             guna2TextBox2.TabIndex = 22;
-            // 
-            // mainpanel
-            // 
-            mainpanel.CustomizableEdges = customizableEdges1;
-            mainpanel.Location = new Point(503, 57);
-            mainpanel.Name = "mainpanel";
-            mainpanel.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            mainpanel.Size = new Size(231, 371);
-            mainpanel.TabIndex = 17;
-            mainpanel.Paint += mainpanel_Paint;
             // 
             // applybtn
             // 

@@ -13,6 +13,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
+using Org.BouncyCastle.Crypto.Macs;
+using Org.BouncyCastle.Utilities.Encoders;
+using Org.BouncyCastle.Utilities.Net;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
@@ -126,7 +130,7 @@ namespace HR_MANAGEMENT_SYSTEM
         }
 
         private void showPanel_Paint(object sender, PaintEventArgs e)
-        { 
+        {
 
         }
 
@@ -223,11 +227,10 @@ namespace HR_MANAGEMENT_SYSTEM
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+  private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            viewform form = new viewform();
-            loadform(new viewform());
+            schedview form = new schedview();
+            loadform(new schedview());
         }
     }
 }
