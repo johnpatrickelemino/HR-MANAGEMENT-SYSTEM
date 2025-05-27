@@ -28,7 +28,7 @@ namespace HR_MANAGEMENT_SYSTEM
                 try
                 {
                     conn.Open();
-                    string query = "SELECT fullname FROM Applicants;";
+                    string query = "SELECT DISTINCT fullname FROM Applicants ORDER BY fullname ASC;";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -39,7 +39,7 @@ namespace HR_MANAGEMENT_SYSTEM
                             comboBox1.Items.Add(sName);
                         }
                     }
-                }
+                }// yung mismong applicant ba or yung database pano magdadag ng applicant?
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error loading databases: " + ex.Message);

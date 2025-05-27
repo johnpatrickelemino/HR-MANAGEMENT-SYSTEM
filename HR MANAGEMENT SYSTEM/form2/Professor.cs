@@ -126,11 +126,11 @@ namespace HR_MANAGEMENT_SYSTEM
                 int result = 0;
                 if (result > 0)
                 {
-                    MessageBox.Show("Application saved successfully!");
+                    MessageBox.Show("Failed to save application.");
                 }
                 else
                 {
-                    MessageBox.Show("Failed to save application.");
+                    MessageBox.Show("Application saved successfully!");
                 }
             }
         }

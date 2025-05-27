@@ -119,7 +119,7 @@ namespace HR_MANAGEMENT_SYSTEM
                     MessageBox.Show("Failed to save application.");
                 }
                 else
-                {
+                {//san ka nag add ng applicant na design? asan ang button
                     MessageBox.Show("Application saved successfully!");
                 }
             }

@@ -11,13 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Transactions;
+using research;
 
 namespace HR_MANAGEMENT_SYSTEM
 {
     public partial class Applicantform : Form
     {
         private string connectionString;
-
+        private bool islogin = false; // Assuming this is set based on login status
         public Applicantform()
         {
             InitializeComponent();
@@ -82,7 +83,7 @@ namespace HR_MANAGEMENT_SYSTEM
             {
                 string selectedPdfPath = File.FileName;
 
-                guna2TextBox2.Text = selectedPdfPath;
+                path.Text = selectedPdfPath;
 
             }
 
@@ -134,7 +135,7 @@ namespace HR_MANAGEMENT_SYSTEM
             open.Filter = "jpg.files|*.jpg|png.files|*.png|All files|*.*";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
-                    guna2PictureBox1.ImageLocation = open.FileName;
+                    profile.ImageLocation = open.FileName;
                 }
            
         }
@@ -201,84 +202,105 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void applybtn_Click(object sender, EventArgs e)
         {
+
+
             string connectionString = "Server=localhost;Database=hr;Uid=root;Pwd=;";
             string fullname = fullnamebtn.Text.Trim();
             string address = addressbtn.Text.Trim();
             string gmail = gmailbtn.Text.Trim();
             string sex = comboBox2.Text;
             string jobtitle = comboBox1.Text;
-            string pdfFile = guna2TextBox2.Text.Trim();
-            if (string.IsNullOrWhiteSpace(fullname) ||
-                string.IsNullOrWhiteSpace(address) ||
-                string.IsNullOrWhiteSpace(gmail) ||
-                string.IsNullOrWhiteSpace(sex) ||
-                string.IsNullOrWhiteSpace(jobtitle) ||
-                string.IsNullOrWhiteSpace(pdfFile))
+            int Age = agebtn.Text.Trim() == "" ? 0 : int.Parse(agebtn.Text.Trim());
+            string pdf = path.Text.Trim();
+            Image image = profile.Image;
+            //if (string.IsNullOrWhiteSpace(fullname) ||
+            //    string.IsNullOrWhiteSpace(address) ||
+            //    string.IsNullOrWhiteSpace(gmail) ||
+            //    string.IsNullOrWhiteSpace(sex) ||
+            //    string.IsNullOrWhiteSpace(jobtitle) ||
+            //    string.IsNullOrWhiteSpace(pdfFile))
+            //{
+            //    MessageBox.Show("Please fill in all required fields.", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //if (!int.TryParse(agebtn.Text.Trim(), out int age))
+            //{
+            //    MessageBox.Show("Please enter a valid numeric age.", "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            //if (profile.Image == null)
+            //{
+            //    MessageBox.Show("Please upload an image before applying.", "Image Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+            Connection con = new Connection();
+           
+            if (!islogin)
             {
-                MessageBox.Show("Please fill in all required fields.", "Missing Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                con.UpdateNameByUsername(fullname, address, gmail, Age, sex, jobtitle);
+                MessageBox.Show("Application submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (!int.TryParse(agebtn.Text.Trim(), out int age))
+            else
             {
-                MessageBox.Show("Please enter a valid numeric age.", "Invalid Age", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("You must be logged in to apply.", "Login Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            if (guna2PictureBox1.Image == null)
-            {
-                MessageBox.Show("Please upload an image before applying.", "Image Missing", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            byte[] imageBytes;
-            try
-            {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    using (Bitmap bmp = new Bitmap(guna2PictureBox1.Image))
-                    {
-                        bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                    }
-                    imageBytes = ms.ToArray();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Failed to process image: " + ex.Message, "Image Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string query = @"INSERT INTO applicants 
-                         (fullname, address, gmail, age, sex, jobtitle, image, file)  VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
-                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
-                    {
-                        cmd.Parameters.AddWithValue("@fullname", fullname);
-                        cmd.Parameters.AddWithValue("@address", address);
-                        cmd.Parameters.AddWithValue("@gmail", gmail);
-                        cmd.Parameters.AddWithValue("@age", age);
-                        cmd.Parameters.AddWithValue("@sex", sex);
-                        cmd.Parameters.AddWithValue("@jobtitle", jobtitle);
-                        cmd.Parameters.AddWithValue("@image", imageBytes);
-                        cmd.Parameters.AddWithValue("@file", pdfFile);
+            
+            
+            //try mo
+           
 
-                        int result = cmd.ExecuteNonQuery();
-                        if (result > 0)
-                        {
-                            MessageBox.Show("Application saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Failed to save application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            //        byte[] imageBytes; //wala namn applicant d2 na  nangsaling sa db mo kanina i don tget it basta ginamit ko yung button para masave sa db
+            //        try
+            //        {
+            //            using (MemoryStream ms = new MemoryStream())
+            //            {
+            //                using (Bitmap bmp = new Bitmap(guna2PictureBox1.Image))
+            //                {
+            //                    bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            //                }
+            //                imageBytes = ms.ToArray();
+            //            }
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show("Failed to process image: " + ex.Message, "Image Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            return;
+            //        }
+            //        try
+            //        {
+            //            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            //            {
+            //                connection.Open();
+            //                string query = @"INSERT INTO applicants 
+            //                     (fullname, address, gmail, age, sex, jobtitle, image, file)  VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
+            //                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+            //                {
+            //                    cmd.Parameters.AddWithValue("@fullname", fullname);
+            //                    cmd.Parameters.AddWithValue("@address", address);
+            //                    cmd.Parameters.AddWithValue("@gmail", gmail);
+            //                    cmd.Parameters.AddWithValue("@age", age);
+            //                    cmd.Parameters.AddWithValue("@sex", sex);
+            //                    cmd.Parameters.AddWithValue("@jobtitle", jobtitle);
+            //                    cmd.Parameters.AddWithValue("@image", imageBytes);
+            //                    cmd.Parameters.AddWithValue("@file", pdfFile);
+
+            //                    int result = cmd.ExecuteNonQuery();
+            //                    if (result > 0)
+            //                    {
+            //                        MessageBox.Show("Application saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                    }
+            //                    else
+            //                    {
+            //                        MessageBox.Show("Failed to save application.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //                    }
+            //                }
+            //            }
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            MessageBox.Show("Error: " + ex.Message, "Exception", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
         }
     }
-}
+ }

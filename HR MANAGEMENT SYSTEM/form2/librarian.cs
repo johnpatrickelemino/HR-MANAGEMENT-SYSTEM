@@ -125,7 +125,7 @@ namespace HR_MANAGEMENT_SYSTEM
                 }
                 else
                 {
-                    MessageBox.Show("Application saved successfully!");
+                    MessageBox.Show("Application saved successfully! ");
                 }
             }
         }

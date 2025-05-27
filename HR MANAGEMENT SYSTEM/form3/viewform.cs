@@ -52,7 +52,7 @@ namespace HR_MANAGEMENT_SYSTEM.form3
                         cmd.Parameters.AddWithValue("@fullname", "%" + applicantFullName + "%");
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
-                            if (reader.Read())
+                            while (reader.Read())
                             {
                                 fullname.Text = reader["fullname"].ToString();
                                 address.Text = reader["address"].ToString();
@@ -68,10 +68,6 @@ namespace HR_MANAGEMENT_SYSTEM.form3
                                         applipic.Image = Image.FromStream(ms);
                                     }
                                 }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Applicant not found.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }

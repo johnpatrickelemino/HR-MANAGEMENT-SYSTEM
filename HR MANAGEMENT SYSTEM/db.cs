@@ -76,10 +76,10 @@ namespace research
                 return false;
             }
         }
-
-        public bool applicants(string fullname, string address, string gmail, int age, string sex, string jobtitle, Image image, byte[] resumePdf, string resumePath)
+        //saan sa mga class mo or form 
+        public bool applicants(string fullname, string address, string gmail, int age, string sex, string jobtitle, Image image, string resumePath)
         {
-            try
+            try //
             {
                 byte[] imageBytes;
                 using (MemoryStream ms = new MemoryStream())
@@ -91,8 +91,8 @@ namespace research
                 {
                     connection.Open();
                     string applicantQuery = @"INSERT INTO applicants 
-                (fullname, address, gmail, age, sex, jobtitle, image, file, filepath) 
-                VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file, @filepath)";
+                (fullname, address, gmail, age, sex, jobtitle, image, file) 
+                VALUES (@fullname, @address, @gmail, @age, @sex, @jobtitle, @image, @file)";
                     using (MySqlCommand cmd = new MySqlCommand(applicantQuery, connection))
                     {
                         cmd.Parameters.AddWithValue("@fullname", fullname);
@@ -101,20 +101,54 @@ namespace research
                         cmd.Parameters.AddWithValue("@age", age);
                         cmd.Parameters.AddWithValue("@sex", sex);
                         cmd.Parameters.AddWithValue("@jobtitle", jobtitle);
-                        cmd.Parameters.AddWithValue("@image", imageBytes);
-                        cmd.Parameters.AddWithValue("@file", resumePdf);
-                        cmd.Parameters.AddWithValue("@filepath",resumePath);
+                        cmd.Parameters.AddWithValue("@image", image);
 
+                        cmd.Parameters.AddWithValue("@file", resumePath);
+                        //longblob
 
-                        cmd.ExecuteNonQuery(); 
-                    }
-                }
+                        cmd.ExecuteNonQuery();
+                    }         
+                }//try mo ulit
                 return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error inserting applicant info: " + ex.Message);
                 return false;
+            }
+        }
+        public void UpdateNameByUsername(string fname, string add, string gmail, int age, string sex, string job)
+        {
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query =  "INSERT INTO applicants (fullname, address, gmail, age, sex, jobtitle) VALUES (@full , @add, @gmail, @age, @sex, @job)";
+                    
+                    using (var cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@full", fname);
+                        cmd.Parameters.AddWithValue("@add", add);
+                        cmd.Parameters.AddWithValue("@gmail", gmail); //isa isa hin mo
+                        cmd.Parameters.AddWithValue("@age", age);
+                        cmd.Parameters.AddWithValue("@sex", sex);
+                        cmd.Parameters.AddWithValue("@job", job); //try mo
+                   
+
+                        //using (MemoryStream ms = new MemoryStream())
+                        //{
+                        //    profile.Save(ms, profile.RawFormat); // Save image to memory stream
+                        //    byte[] imageBytes = ms.ToArray();
+                        //    cmd.Parameters.AddWithValue("@image", imageBytes);
+                        //}
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error10: " + ex.Message);
             }
         }
         public bool ProfessorForm(byte[] diplomaFile, byte[] licenseFile, byte[] transcriptFile, byte[] validIdFile)
