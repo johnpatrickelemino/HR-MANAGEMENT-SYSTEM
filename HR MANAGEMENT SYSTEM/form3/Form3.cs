@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace HR_MANAGEMENT_SYSTEM
 {
     public partial class Form3 : Form
     {
+        public bool islogin = true;
         public Form3()
         {
             InitializeComponent();
@@ -76,6 +78,20 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void logoutbtn_Click(object sender, EventArgs e)
         {
+            if (islogin == true)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    this.Close();
+                    Form1 form1 = new Form1();
+                    form1.Show();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You are not logged in.", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
         bool menuexpand = false;

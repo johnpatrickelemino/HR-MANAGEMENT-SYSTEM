@@ -1,3 +1,4 @@
+using HR_MANAGEMENT_SYSTEM.form3;
 using research;
 using System.Runtime.CompilerServices;
 
@@ -47,7 +48,7 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void label4_Click(object sender, EventArgs e)
         {
-            Applicantform form = new Applicantform();
+            applicantform form = new applicantform();
             form.Show();
 
         }
@@ -88,7 +89,7 @@ namespace HR_MANAGEMENT_SYSTEM
         private void applicantbuton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Applicantform form = new Applicantform();
+            applicantform form = new applicantform();
             form.Show();
         }
 
@@ -128,6 +129,13 @@ namespace HR_MANAGEMENT_SYSTEM
 
         private void guna2ControlBox2_Click(object sender, EventArgs e)
         {
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form4 form4 = new Form4();
+            form4.Show();
         }
     }
 }

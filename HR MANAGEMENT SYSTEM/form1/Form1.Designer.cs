@@ -188,6 +188,7 @@
             guna2Button1.Size = new Size(117, 27);
             guna2Button1.TabIndex = 11;
             guna2Button1.Text = "forgot password";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // login
             // 

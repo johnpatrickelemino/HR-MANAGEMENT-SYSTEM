@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace research
 {
@@ -30,6 +31,7 @@ namespace research
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
                         return count > 0;
                     }
+
                 }
             }
             catch (Exception ex)
@@ -39,6 +41,42 @@ namespace research
 
             }
         }
+        public bool UpdatePassword(string username, string oldPassword, string newPassword)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string checkQuery = "SELECT COUNT(*) FROM admin WHERE username = @username AND password = @oldPassword";
+                    using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection))
+                    {
+                        checkCmd.Parameters.AddWithValue("@username", username);
+                        checkCmd.Parameters.AddWithValue("@oldPassword", oldPassword);
+                        int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+
+                        if (count == 0)
+                        {
+                            return false;
+                        }
+                    }
+                    string updateQuery = "UPDATE admin SET password = @newPassword WHERE username = @username";
+                    using (MySqlCommand updateCmd = new MySqlCommand(updateQuery, connection))
+                    {
+                        updateCmd.Parameters.AddWithValue("@newPassword", newPassword);
+                        updateCmd.Parameters.AddWithValue("@username", username);
+                        int rowsAffected = updateCmd.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+        }
+
         public bool applicants(string fullname, string address, string gmail, int age, string sex, string jobtitle, Image image, byte[] resumePdf)
         {
             try
@@ -77,7 +115,6 @@ namespace research
                 return false;
             }
         }
-
         public bool ProfessorForm(byte[] diplomaFile, byte[] licenseFile, byte[] transcriptFile, byte[] validIdFile)
         {
             try

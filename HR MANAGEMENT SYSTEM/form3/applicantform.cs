@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Mysqlx.Resultset;
 
 namespace HR_MANAGEMENT_SYSTEM.form3
 { 
@@ -41,15 +42,8 @@ namespace HR_MANAGEMENT_SYSTEM.form3
 
         private void applipic_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                applipic.Image = Image.FromFile(openFileDialog.FileName);
-            }
         }
-        
     }
-  
-    
+
+
 }
